@@ -1,6 +1,5 @@
 import pytest
 from selenium import webdriver
-import argparse
 from selenium.webdriver.chrome.options import Options
 
 def pytest_addoption(parser):
