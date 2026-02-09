@@ -1,10 +1,12 @@
 import time
+import pytest
 
 from pages.product_page import ProductPage
+from pages.urls import CatalogueUrls
 
 
-def test_guest_can_add_product_to_basket(browser):
-    link = "http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209/?promo=newYear"
+@pytest.mark.parametrize('link', *CatalogueUrls.promo_offer_urls)
+def test_guest_can_add_product_to_basket(browser, link):
     page = ProductPage(browser, link)
     page.open()
     page.add_book_at_basket()
