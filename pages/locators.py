@@ -18,3 +18,4 @@ class ProductPageLocators():
     price_book = (By.CSS_SELECTOR, ".product_main .price_color")
     name_book = (By.CSS_SELECTOR, ".product_main h1")
     name_book_in_msg_add_product = (By.CSS_SELECTOR, "#messages :nth-child(1) .alertinner strong ")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages div:first-child")
