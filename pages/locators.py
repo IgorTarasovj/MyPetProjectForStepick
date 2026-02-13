@@ -5,6 +5,7 @@ class MainPageLocators():
     login_link = (By.CSS_SELECTOR, "#login_link")
 
 
+
 class LoginPageLocators():
     register_form = (By.CSS_SELECTOR, "#register_form")
     login_form = (By.CSS_SELECTOR, "#login_form")
@@ -23,3 +24,9 @@ class ProductPageLocators():
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    button_open_basket = (By.CSS_SELECTOR, ".btn-group a")
+
+class BasketPageLocators():
+    basket_title = (By.CSS_SELECTOR, ".basket-title")
+    message_basket_is_empty = (By.CSS_SELECTOR, "#content_inner > p")
+

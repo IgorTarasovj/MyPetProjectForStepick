@@ -1,5 +1,8 @@
+import pytest
+
 from pages.main_page import MainPage
 from pages.login_page import LoginPage
+from pages.basket_page import BasketPage
 
 
 def test_guest_can_go_to_login_page(browser):
@@ -23,3 +26,22 @@ def test_guest_can_open_login_page(browser):
     page.go_to_login_page()
     login_page = LoginPage(browser, browser.current_url)
     login_page.should_be_login_page()
+
+
+def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
+    link = "http://selenium1py.pythonanywhere.com"
+    page = BasketPage(browser, link)
+    page.open()
+    page.should_be_basket_button()
+    page.go_to_basket_page()
+    page.basket_is_empty()
+    page.should_be_message_if_basket_is_empty()
+
+def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
+    link = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
+    page = BasketPage(browser, link)
+    page.open()
+    page.should_be_basket_button()
+    page.go_to_basket_page()
+    page.basket_is_empty()
+    page.should_be_message_if_basket_is_empty()
