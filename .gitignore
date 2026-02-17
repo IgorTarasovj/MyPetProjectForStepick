@@ -1,9 +1,8 @@
-/venv/
+/.venv/
 /.idea/
-/__pycache__/
 /.vscode
-/pages/__pycache__
+pages/__pycache__
+/.pytest_cache
+/__pycache__
 *.pyc
-*.pyc
-__pycache__/conftest.cpython-314-pytest-9.0.2.pyc
-__pycache__/test_main_page.cpython-314-pytest-9.0.2.pyc
+test_main_page.cpython-314-pytest-9.0.2.pyc
