@@ -57,6 +57,13 @@ class BasePage():
         link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
         link.click()
 
+    def go_to_register_page(self):
+        link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
+        link.click()
+
+    def should_be_registred(self):
+        assert self.is_element_present(*BasePageLocators.logout_link), "Logout link not found, probably user is not registred"
+
     def should_be_login_link(self):
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
 
@@ -66,3 +73,6 @@ class BasePage():
     def go_to_basket_page(self):
         button_open_basket = self.browser.find_element(*BasePageLocators.button_open_basket)
         button_open_basket.click()
+
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.logout_link), "Logout link is not presented, probably unauthorised user"
