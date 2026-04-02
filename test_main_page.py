@@ -20,8 +20,6 @@ class TestLoginFromMainPage():
         page.should_be_login_link()
 
 
-
-
 def test_guest_can_open_login_page(browser):
     link = "http://selenium1py.pythonanywhere.com"
     page = MainPage(browser, link)
