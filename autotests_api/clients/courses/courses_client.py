@@ -107,7 +107,7 @@ class CoursesClient(APIClient):
 
     def create_course(self, request: CreateCourseRequestDict) -> CreateCourseResponseDict:
         """
-
+        Метод возвращает ответ от create_course_api в формате json
         :param request: Словарь с title, maxScore, minScore, description, estimatedTime,
         previewFileId, createdByUserId.
         :return: Ответ от сервера в формате json
