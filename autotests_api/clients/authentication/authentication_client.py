@@ -4,34 +4,8 @@ from httpx import Response
 
 from autotests_api.clients.api_client import APIClient
 from autotests_api.clients.public_http_builder import get_public_http_client
-
-class Token(TypedDict):
-    """
-    Описание структуры аутентификационных токенов.
-    """
-    tokenType: str
-    accessToken: str
-    refreshToken: str
-
-class LoginResponseDict(TypedDict):
-    """
-    Описание структуры ответа аутентификации.
-    """
-    token: Token
-
-
-class LoginRequestDict(TypedDict):
-    """
-    Описание структуры запроса на аутентификацию.
-    """
-    email: str
-    password: str
-
-class RefreshRequestDict(TypedDict):
-    """
-    Описание структуры запроса для обновления токена.
-    """
-    refresh_token: str
+from autotests_api.clients.authentication.authentication_schema import LoginRequestSchema, RefreshRequestSchema, LoginResponseSchema
+from autotests_api.clients.public_http_builder import get_public_http_client
 
 class AuthenticationClient(APIClient):
 
@@ -39,7 +13,7 @@ class AuthenticationClient(APIClient):
     Клиент для работы с /api/v1/authentication
     """
 
-    def login_api(self, request: LoginRequestDict) ->Response:
+    def login_api(self, request: LoginRequestSchema) ->Response:
 
         """
         Метод отправляет запрос на аутентификацию пользователя.
@@ -47,9 +21,9 @@ class AuthenticationClient(APIClient):
         :param request: Словарь с email и password.
         :return: Ответ от сервера в виде объекта httpx.Response
         """
-        return  self.post("/api/v1/authentication/login", json=request)
+        return  self.post("/api/v1/authentication/login", json=request.model_dump(by_alias=True))
 
-    def refresh_api(self, request: RefreshRequestDict) -> Response:
+    def refresh_api(self, request: RefreshRequestSchema) -> Response:
 
         """
         Метод отправляет запрос на обновление токена авторизации.
@@ -57,16 +31,11 @@ class AuthenticationClient(APIClient):
         :param request: Словарь с refreshToken.
         :return: Ответ от сервера в виде объекта httpx.Response
         """
-        return self.post("/api/v1/authentication/refresh", json=request)
+        return self.post("/api/v1/authentication/refresh", json=request.model_dump(by_alias=True))
 
-    def login(self, request: LoginRequestDict) -> LoginResponseDict:
-        """
-        Метод вызывает login_api и извлекает его ответ в виде JSON
-        :param request: Словарь с email и password.
-        :return: Ответ сервера в виде json
-        """
+    def login(self, request: LoginRequestSchema) -> LoginResponseSchema:
         response = self.login_api(request)
-        return response.json()
+        return LoginResponseSchema.model_validate_json(response.text)
 
 def get_authentication_client() -> AuthenticationClient:
     """

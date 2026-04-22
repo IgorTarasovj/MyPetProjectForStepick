@@ -1,61 +1,33 @@
-from typing import TypedDict
-
 from httpx import Response
 
-from ..api_client import APIClient
-from ..public_http_builder import get_public_http_client
+from autotests_api.clients.api_client import APIClient
+from autotests_api.clients.public_http_builder import get_public_http_client
+from autotests_api.clients.users.users_schema import CreateUserResponseSchema, CreateUserRequestSchema
 
-class CreateUserRequestDict(TypedDict):
-    """
-    Описание структуры создания пользователя
-    """
-    email : str
-    password : str
-    first_name : str
-    last_name : str
-    middle_name : str
-
-class User(TypedDict):
-    """
-    Описание структуры пользователя.
-    """
-    id: str
-    email: str
-    lastName: str
-    firstName: str
-    middleName: str
-
-class CreateUserResponseDict(TypedDict):
-    """
-    Описание структуры ответа создания пользователя.
-    """
-    user: User
 
 class PublicUsersClient(APIClient):
     """
     Клиент для работы с /api/v1/users
     """
 
-    def create_user_api(self, request: CreateUserRequestDict ) -> Response:
+    def create_user_api(self, request: CreateUserRequestSchema) -> Response:
         """
-        Метод отправляет запрос на создание пользователя
-        :param request: Словарь с email, password, first_name, last_name, middle_name
+        Метод создает пользователя.
+
+        :param request: Словарь с email, password, lastName, firstName, middleName.
         :return: Ответ от сервера в виде объекта httpx.Response
         """
-        return self.post("/api/v1/users", json=request)
+        return self.post("/api/v1/users", json=request.model_dump(by_alias=True))
 
-    def create_user(self, request: CreateUserRequestDict) -> CreateUserResponseDict:
-        """
-        Метод возвращает ответ на запрос метода create_user_api в виде json
-        :param request: Словарь с email, password, first_name, last_name, middle_name
-        :return: Ответ от сервера в формате json
-        """
+    def create_user(self, request: CreateUserRequestSchema) -> CreateUserResponseSchema:
         response = self.create_user_api(request)
-        return response.json()
+        return CreateUserResponseSchema.model_validate_json(response.text)
+
 
 def get_public_users_client() -> PublicUsersClient:
     """
-    Функция создаёт экземпляр PublicUsersClient с уже настроенным HTTP-клиентом
-    :return: Готовый к использованию PublicUsersClient
+    Функция создаёт экземпляр PublicUsersClient с уже настроенным HTTP-клиентом.
+
+    :return: Готовый к использованию PublicUsersClient.
     """
     return PublicUsersClient(client=get_public_http_client())
