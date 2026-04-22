@@ -4,7 +4,7 @@ from httpx import Response
 
 from ..api_client import APIClient
 from ..private_http_builder import get_private_http_client, AuthenticationUserSchema
-from autotests_api.clients.exercises.exercises_schema import ExerciseSchema, GetExerciseSchema, CreateExerciseResponseSchema, CreateExerciseRequestSchema, UpdateExerciseResponseSchema
+from autotests_api.clients.exercises.exercises_schema import ExerciseSchema, GetExerciseSchema, CreateExerciseResponseSchema, CreateExerciseRequestSchema, UpdateExerciseRequestSchema
 
 class ExercisesClient(APIClient):
     """
@@ -39,7 +39,7 @@ class ExercisesClient(APIClient):
         """
         return self.post("/api/v1/exercises", json=request.model_dump(by_alias=True))
 
-    def update_exercise_api(self,exercise_id: str, request: UpdateExerciseResponseSchema) -> Response:
+    def update_exercise_api(self, exercise_id: str, request: UpdateExerciseRequestSchema) -> Response:
         """
         Метод обновления задания.
 

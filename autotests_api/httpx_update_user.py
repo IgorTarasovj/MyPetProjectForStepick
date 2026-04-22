@@ -1,10 +1,10 @@
 from wsgiref import headers
 
 import httpx
-from tools.fakers import get_random_email
+from tools.fakers import fake
 
 create_user_request = {
-    "email": get_random_email(),
+    "email": fake.email(),
     "password": "string",
     "lastName": "string",
     "firstName": "string",
