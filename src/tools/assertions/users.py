@@ -1,4 +1,4 @@
-from clients.users.users_schema import CreateUserRequestSchema, CreateUserResponseSchema
+from src.clients.users.users_schema import CreateUserRequestSchema, CreateUserResponseSchema
 from tools.assertions.base import assert_equal
 
 
