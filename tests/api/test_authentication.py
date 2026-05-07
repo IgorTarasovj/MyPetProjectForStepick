@@ -4,7 +4,7 @@ import pytest
 
 from src.clients.authentication.authentication_client import AuthenticationClient
 from src.clients.authentication.authentication_schema import LoginRequestSchema, LoginResponseSchema
-from tests.api.conftest import UserFixture
+from src.fixtures.models.user_fixture import UserFixture
 from tools.assertions.authentication import assert_login_response
 from tools.assertions.base import assert_status_code
 from tools.assertions.schema import validate_json_schema
