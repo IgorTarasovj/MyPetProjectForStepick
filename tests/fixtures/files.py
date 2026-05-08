@@ -11,7 +11,7 @@ from src.fixtures.models.user_fixture import UserFixture
 def files_client(function_user: UserFixture) -> FilesClient:
     """
     Фикстура создает экземпляр FilesClient.
-    :param результат фикстуры function_user(экземпляр UserFixture)
+    :param Фикстура пользователя (UserFixture)
     :return: экземпляр FilesClient.
     """
     return get_files_client(function_user.authentication_user)
@@ -20,9 +20,9 @@ def files_client(function_user: UserFixture) -> FilesClient:
 @pytest.fixture
 def function_file(files_client: FilesClient) -> FileFixture:
     """
-    Фикстура создает тестовый файл
-    :param files_client: экземпляр FilesClient(клиент для работы с файлами)
-    :return: экземпляр FileFixture(request: CreateFileRequestSchema, response: CreateFileResponseSchema)
+    Фикстура создает тестовый файл через API и возвращает агрегированные данные
+    :param files_client: Клиент для работы с API файлов (/api/v1/courses)
+    :return: FileFixture с данными запроса и ответа
     """
     request = CreateFileRequestSchema(upload_file="./tests/testdata/files/image.png")
     response = files_client.create_file(request)
