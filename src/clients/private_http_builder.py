@@ -5,7 +5,10 @@ from httpx import Client
 from src.clients.authentication.authentication_client import get_authentication_client, LoginRequestSchema
 
 
-class AuthenticationUserSchema(BaseModel):  # Структура данных пользователя для авторизации
+class AuthenticationUserSchema(BaseModel):
+    """
+    Структура данных пользователя для авторизации
+    """
     email: str
     password: str
 

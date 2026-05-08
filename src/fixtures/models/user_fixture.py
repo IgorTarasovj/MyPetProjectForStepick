@@ -5,6 +5,9 @@ from src.clients.users.users_schema import CreateUserRequestSchema, CreateUserRe
 
 
 class UserFixture(BaseModel):
+    """
+    Описание структуры для агрегации возвращаемых данных при создании юзера(api/v1/users)
+    """
     request: CreateUserRequestSchema
     response: CreateUserResponseSchema
 
