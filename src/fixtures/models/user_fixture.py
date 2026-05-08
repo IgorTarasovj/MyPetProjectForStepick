@@ -7,7 +7,7 @@ from src.clients.users.users_schema import CreateUserRequestSchema, CreateUserRe
 class UserFixture(BaseModel):
     """
     Описание структуры для агрегирования ответа API при создании пользователя(api/v1/users)
-    Атрибуты:
+    Attributes:
         request (CreateUserRequestSchema): Структура запроса на создание пользователя(api/v1/users)
         response (CreateUserResponseSchema): Структура ответа на создание пользователя(api/v1/users)
     """

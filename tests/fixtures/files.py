@@ -10,9 +10,9 @@ from src.fixtures.models.user_fixture import UserFixture
 @pytest.fixture
 def files_client(function_user: UserFixture) -> FilesClient:
     """
-    Фикстура создает экземпляр FilesClient.
-    :param Фикстура пользователя (UserFixture)
-    :return: экземпляр FilesClient.
+    Фикстура создает экземпляр FilesClient
+    :param function_user: Фикстура создания пользователя (UserFixture)
+    :return: экземпляр FilesClient
     """
     return get_files_client(function_user.authentication_user)
 

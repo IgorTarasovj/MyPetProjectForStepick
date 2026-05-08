@@ -12,8 +12,8 @@ from src.fixtures.models.course_fixture import CourseFixture
 def courses_client(function_user: UserFixture) -> CoursesClient:
     """
     Фикстура создает экземпляр CoursesClient.
-    :param Фикстура создания пользователя
-    :return: экземпляр CoursesClient.
+    :param function_user: Фикстура создания пользователя
+    :return: экземпляр CoursesClient
     """
     return get_courses_client(function_user.authentication_user)
 
@@ -27,8 +27,8 @@ def function_course(
     """
     Фикстура создает тестовый курс через API и возвращает агрегированные данные
     :param courses_client: Клиент для работы с API курсов (/api/v1/courses)
-    :param function_user: Фикстура пользователя (UserFixture)
-    :param function_file: Фикстура файла (FileFixture)
+    :param function_user: Фикстура добавления пользователя (UserFixture) через API
+    :param function_file: Фикстура добавления файла (FileFixture) через API
     :return: CourseFixture с данными запроса и ответа
     """
     request = CreateCourseRequestSchema(
