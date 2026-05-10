@@ -21,7 +21,7 @@ def assert_equal(actual: Any, expected: Any, name: str):
 
     :param actual:Название проверяемого значения.
     :param expected:Фактическое значение.
-    :param name:Ожидаемое значение.
+    :param name: Название проверяемого поля
     :raises AssertionError: Если фактическое значение не равно ожидаемому.
     """
     assert actual == expected, (

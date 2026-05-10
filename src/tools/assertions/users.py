@@ -16,6 +16,12 @@ def assert_create_user_response(request: CreateUserRequestSchema, response: Crea
     assert_equal(response.user.middle_name, request.middle_name, "middle_name")
 
 def assert_user(actual : UserSchema, expected : UserSchema):
+    """
+    Проверяет, что данные пользователя соответствуют ожидаемым
+    :param actual: Фактический пользователь
+    :param expected: Ожидаемый пользователь
+    :raises AssertionError: Если хотя бы одно поле не совпадает
+    """
 
     assert_equal(actual.id, expected.id, "id")
     assert_equal(actual.email, expected.email, "email")
@@ -24,4 +30,10 @@ def assert_user(actual : UserSchema, expected : UserSchema):
     assert_equal(actual.middle_name, expected.middle_name, "middle_name")
 
 def assert_get_user_response(get_user_response, create_user_response):
+    """
+    Проверяет, что данные пользователя, полученным в GET-запросе, соответствуют созданному в POST-запросе
+    :param get_user_response: Данные пользователя из GET api/v1/user{user_id}
+    :param create_user_response: Ответ POST запроса api/v1/users
+    :raises AssertionError: Если хотя бы одно поле не совпадает
+    """
     return assert_user(get_user_response, create_user_response)
