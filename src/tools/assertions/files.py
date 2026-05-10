@@ -1,4 +1,4 @@
-from src.clients.files.files_schema import CreateFileRequestSchema, CreateFileResponseSchema
+from src.clients.files.files_schema import CreateFileRequestSchema, CreateFileResponseSchema, FileSchema, GetFileResponseSchema
 from tools.assertions.base import assert_equal
 import httpx
 
@@ -25,3 +25,25 @@ def assert_file_is_accessible(url: str):
     """
     response = httpx.get(url)
     assert response.status_code == 200, f"Файл недоступен по URL: {url}"
+
+def assert_file(actual: FileSchema, expected: FileSchema):
+    """
+    Проверяет, что фактические данные файла соответствуют ожидаемым
+    :param actual: Фактические данные файла
+    :param expected: Ожидаемые данные файла
+    :raises AssertionError: Если хотя бы одно поле не совпадает
+    """
+    assert_equal(actual.id, expected.id, "id")
+    assert_equal(actual.filename, expected.filename, "filename")
+    assert_equal(actual.directory, expected.directory, "directory")
+    assert_equal(actual.url, expected.url, "url")
+
+def assert_get_file_response(get_file_response: GetFileResponseSchema, create_file_response: CreateFileResponseSchema):
+    """
+    Проверяет, что ответ на получение файла соответствует ответу на его создание
+
+    :param get_file_response: Ответ GET-запроса api/v1/file{file_id}
+    :param create_file_response: Ответ POST-запроса api/v1/files
+    :raises AssertionError: Если данные файла не совпадают
+    """
+    assert_file(get_file_response.file, create_file_response.file)
