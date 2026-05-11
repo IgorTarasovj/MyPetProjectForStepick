@@ -2,10 +2,10 @@ from http import HTTPStatus
 
 import pytest
 
-from src.clients.users.private_users_client import PrivateUsersClient
-from src.clients.users.public_users_client import PublicUsersClient
-from src.clients.users.users_schema import CreateUserRequestSchema, CreateUserResponseSchema, GetUserResponseSchema
-from src.fixtures.models.user_fixture import UserFixture
+from clients.users.private_users_client import PrivateUsersClient
+from clients.users.public_users_client import PublicUsersClient
+from clients.users.users_schema import CreateUserRequestSchema, CreateUserResponseSchema, GetUserResponseSchema
+from fixtures.models.user_fixture import UserFixture
 from tools.assertions.schema import  validate_json_schema
 from tools.assertions.base import assert_status_code
 from tools.assertions.users import assert_create_user_response, assert_get_user_response

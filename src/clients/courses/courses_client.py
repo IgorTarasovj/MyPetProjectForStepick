@@ -2,7 +2,7 @@ from httpx import Response
 
 from ..api_client import APIClient
 from ..private_http_builder import get_private_http_client, AuthenticationUserSchema
-from src.clients.courses.courses_schema import GetCourseQuerySchema, CreateCourseRequestSchema, UpdateCourseRequestSchema, CreateCourseResponseSchema
+from clients.courses.courses_schema import GetCourseQuerySchema, CreateCourseRequestSchema, UpdateCourseRequestSchema, CreateCourseResponseSchema
 
 
 class CoursesClient(APIClient):

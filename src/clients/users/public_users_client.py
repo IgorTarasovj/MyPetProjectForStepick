@@ -1,8 +1,8 @@
 from httpx import Response
 
-from src.clients.api_client import APIClient
-from src.clients.public_http_builder import get_public_http_client
-from src.clients.users.users_schema import CreateUserResponseSchema, CreateUserRequestSchema
+from clients.api_client import APIClient
+from clients.public_http_builder import get_public_http_client
+from clients.users.users_schema import CreateUserResponseSchema, CreateUserRequestSchema
 
 
 class PublicUsersClient(APIClient):

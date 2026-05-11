@@ -1,6 +1,6 @@
 import pytest
 
-from src.clients.authentication.authentication_client import AuthenticationClient, get_authentication_client
+from clients.authentication.authentication_client import AuthenticationClient, get_authentication_client
 
 
 @pytest.fixture

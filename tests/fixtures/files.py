@@ -1,9 +1,9 @@
 import pytest
 
-from src.fixtures.models.file_fixture import FileFixture
-from src.clients.files.files_client import get_files_client, FilesClient
-from src.clients.files.files_schema import CreateFileRequestSchema
-from src.fixtures.models.user_fixture import UserFixture
+from fixtures.models.file_fixture import FileFixture
+from clients.files.files_client import get_files_client, FilesClient
+from clients.files.files_schema import CreateFileRequestSchema
+from fixtures.models.user_fixture import UserFixture
 
 
 

@@ -1,4 +1,4 @@
-from src.clients.authentication.authentication_schema import LoginResponseSchema
+from clients.authentication.authentication_schema import LoginResponseSchema
 from tools.assertions.base import assert_equal, assert_is_true
 
 

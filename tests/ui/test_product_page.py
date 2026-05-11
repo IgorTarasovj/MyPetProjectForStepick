@@ -1,10 +1,10 @@
 import time
 import pytest
 
-from src.pages.login_page import LoginPage
-from src.pages.product_page import ProductPage
-from src.pages.urls import CatalogueUrls
-from src.pages.basket_page import BasketPage
+from pages.login_page import LoginPage
+from pages.product_page import ProductPage
+from pages.urls import CatalogueUrls
+from pages.basket_page import BasketPage
 
 class TestUserAddToBasketFromProductPage():
     @pytest.fixture(scope="function", autouse=True)

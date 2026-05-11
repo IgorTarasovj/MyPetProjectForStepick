@@ -1,10 +1,10 @@
 import pytest
 
-from src.clients.exercises.exercises_client import ExercisesClient, get_exercise_client
-from src.clients.exercises.exercises_schema import CreateExerciseRequestSchema
-from src.fixtures.models.course_fixture import CourseFixture
-from src.fixtures.models.exercise_fixture import ExerciseFixture
-from src.fixtures.models.user_fixture import UserFixture
+from clients.exercises.exercises_client import ExercisesClient, get_exercise_client
+from clients.exercises.exercises_schema import CreateExerciseRequestSchema
+from fixtures.models.course_fixture import CourseFixture
+from fixtures.models.exercise_fixture import ExerciseFixture
+from fixtures.models.user_fixture import UserFixture
 
 
 @pytest.fixture(scope="function")

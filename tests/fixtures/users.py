@@ -1,9 +1,9 @@
 import pytest
 
-from src.fixtures.models.user_fixture import UserFixture
-from src.clients.users.private_users_client import get_private_users_client, PrivateUsersClient
-from src.clients.users.public_users_client import get_public_users_client, PublicUsersClient
-from src.clients.users.users_schema import CreateUserRequestSchema
+from fixtures.models.user_fixture import UserFixture
+from clients.users.private_users_client import get_private_users_client, PrivateUsersClient
+from clients.users.public_users_client import get_public_users_client, PublicUsersClient
+from clients.users.users_schema import CreateUserRequestSchema
 
 
 

@@ -2,7 +2,7 @@ from functools import lru_cache
 from pydantic import BaseModel, ConfigDict
 from httpx import Client
 
-from src.clients.authentication.authentication_client import get_authentication_client, LoginRequestSchema
+from clients.authentication.authentication_client import get_authentication_client, LoginRequestSchema
 
 
 class AuthenticationUserSchema(BaseModel):

@@ -1,7 +1,7 @@
 from pydantic import BaseModel, EmailStr
 
-from src.clients.private_http_builder import AuthenticationUserSchema
-from src.clients.users.users_schema import CreateUserRequestSchema, CreateUserResponseSchema
+from clients.private_http_builder import AuthenticationUserSchema
+from clients.users.users_schema import CreateUserRequestSchema, CreateUserResponseSchema
 
 
 class UserFixture(BaseModel):

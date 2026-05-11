@@ -1,8 +1,8 @@
 from httpx import Response
 
-from src.clients.api_client import APIClient
-from src.clients.authentication.authentication_schema import LoginRequestSchema, RefreshRequestSchema, LoginResponseSchema
-from src.clients.public_http_builder import get_public_http_client
+from clients.api_client import APIClient
+from clients.authentication.authentication_schema import LoginRequestSchema, RefreshRequestSchema, LoginResponseSchema
+from clients.public_http_builder import get_public_http_client
 
 class AuthenticationClient(APIClient):
 

@@ -2,7 +2,7 @@ import uuid
 
 from pydantic import BaseModel, Field, ConfigDict
 
-from src.tools.fakers import fake
+from tools.fakers import fake
 
 
 class ExerciseSchema(BaseModel):

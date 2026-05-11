@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from src.clients.files.files_schema import CreateFileRequestSchema, CreateFileResponseSchema
+from clients.files.files_schema import CreateFileRequestSchema, CreateFileResponseSchema
 
 class FileFixture(BaseModel):
     """

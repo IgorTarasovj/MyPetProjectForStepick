@@ -2,7 +2,7 @@ from httpx import Response
 
 from ..api_client import APIClient
 from ..private_http_builder import get_private_http_client, AuthenticationUserSchema
-from src.clients.exercises.exercises_schema import GetExerciseSchema, CreateExerciseResponseSchema, CreateExerciseRequestSchema, UpdateExerciseRequestSchema
+from clients.exercises.exercises_schema import GetExerciseSchema, CreateExerciseResponseSchema, CreateExerciseRequestSchema, UpdateExerciseRequestSchema
 
 class ExercisesClient(APIClient):
     """
