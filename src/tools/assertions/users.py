@@ -1,19 +1,15 @@
-from clients.users.users_schema import CreateUserRequestSchema, CreateUserResponseSchema, UserSchema
-from tools.assertions.base import assert_equal
+from clients.users.users_schema import CreateUserRequestSchema, CreateUserResponseSchema, UserSchema, PartialUserSchema
+from tools.assertions.base import assert_equal, assert_model, assert_model_match
 
 
-def assert_create_user_response(request: CreateUserRequestSchema, response: CreateUserResponseSchema):
+def assert_create_user_response(request: PartialUserSchema, response: PartialUserSchema):
     """
-    Проверяет, что ответ на создание пользователя соответствует запросу.
 
     :param request: Исходный запрос на создание пользователя.
     :param response: Ответ API с данными пользователя.
     :raises AssertionError: Если хотя бы одно поле не совпадает.
     """
-    assert_equal(response.user.email, request.email, "email")
-    assert_equal(response.user.last_name, request.last_name, "last_name")
-    assert_equal(response.user.first_name, request.first_name, "first_name")
-    assert_equal(response.user.middle_name, request.middle_name, "middle_name")
+    assert_model(request, response)
 
 def assert_user(actual : UserSchema, expected : UserSchema):
     """
@@ -22,12 +18,7 @@ def assert_user(actual : UserSchema, expected : UserSchema):
     :param expected: Ожидаемый пользователь
     :raises AssertionError: Если хотя бы одно поле не совпадает
     """
-
-    assert_equal(actual.id, expected.id, "id")
-    assert_equal(actual.email, expected.email, "email")
-    assert_equal(actual.last_name, expected.last_name, "last_name")
-    assert_equal(actual.first_name, expected.first_name, "first_name")
-    assert_equal(actual.middle_name, expected.middle_name, "middle_name")
+    assert_model(actual, expected)
 
 def assert_get_user_response(get_user_response, create_user_response):
     """
@@ -36,4 +27,4 @@ def assert_get_user_response(get_user_response, create_user_response):
     :param create_user_response: Ответ POST запроса api/v1/users
     :raises AssertionError: Если хотя бы одно поле не совпадает
     """
-    return assert_user(get_user_response, create_user_response)
+    return assert_model(get_user_response, create_user_response)

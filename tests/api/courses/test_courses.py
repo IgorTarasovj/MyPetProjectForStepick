@@ -3,7 +3,7 @@ from http import HTTPStatus
 import pytest
 
 from clients.courses.courses_client import CoursesClient
-from clients.courses.courses_schema import UpdateCourseRequestSchema, UpdateCourseResponseSchema
+from clients.courses.courses_schema import UpdateCourseRequestSchema, UpdateCourseResponseSchema, PartialCourseSchema
 from fixtures.models.course_fixture import CourseFixture
 from tools.assertions.base import assert_status_code
 from tools.assertions.courses import assert_update_course_response
@@ -18,7 +18,24 @@ class TestCourses:
         response = courses_client.update_course_api(function_course.response.course.id, request)
         response_date = UpdateCourseResponseSchema.model_validate_json(response.text)
 
+        request_partial = PartialCourseSchema(
+            title = request.title,
+            maxScore=request.max_score,
+            minScore=request.min_score,
+            description=request.description,
+            estimatedTime=request.estimated_time
+        )
+
+        response_partail = PartialCourseSchema(
+            title = response_date.course.title,
+            maxScore=response_date.course.max_score,
+            minScore=response_date.course.min_score,
+            description=response_date.course.description,
+            estimatedTime=response_date.course.estimated_time
+
+        )
+
         assert_status_code(response.status_code, HTTPStatus.OK)
-        assert_update_course_response(request, response_date)
+        assert_update_course_response(request_partial, response_partail)
 
         validate_json_schema(response.json(), response_date.model_json_schema())

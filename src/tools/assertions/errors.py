@@ -1,5 +1,5 @@
 from clients.errors_schema import ValidationErrorSchema, ValidationErrorResponseSchema, InternalErrorResponseSchema
-from tools.assertions.base import assert_equal, assert_length
+from tools.assertions.base import assert_equal, assert_length, assert_model
 
 
 def assert_validation_error(actual: ValidationErrorSchema, expected: ValidationErrorSchema):
@@ -10,11 +10,7 @@ def assert_validation_error(actual: ValidationErrorSchema, expected: ValidationE
     :param expected: Ожидаемая ошибка.
     :raises AssertionError: Если значения полей не совпадают.
     """
-    assert_equal(actual.type, expected.type, "type")
-    assert_equal(actual.input, expected.input, "input")
-    assert_equal(actual.context, expected.context, "context")
-    assert_equal(actual.message, expected.message, "message")
-    assert_equal(actual.location, expected.location, "location")
+    assert_model(actual,expected)
 
 
 def assert_validation_error_response(

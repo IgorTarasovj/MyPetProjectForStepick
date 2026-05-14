@@ -1,4 +1,5 @@
 from typing import Any, Sized
+from pydantic import BaseModel
 
 
 def assert_status_code(actual: int, expected: int):
@@ -58,3 +59,32 @@ def assert_length(actual: Sized, expected: Sized, name: str):
         f'Expected length: {len(expected)}. '
         f'Actual length: {len(actual)}'
     )
+
+def assert_model(actual: BaseModel, expected: BaseModel):
+    """
+    Сравнивает две Pydantic модели по каждому полю
+    :param actual: Фактическая Pydantic модель
+    :param expected: Ожидаемая Pydantic модель
+    :raises AssertionError: Если фактическое значение какого либо из полей не равно ожидаемому.
+    """
+    expected_data = expected.model_dump()
+
+    for field, value in expected_data.items():
+        actual_value = getattr(actual, field)
+        expected_value = getattr(expected, field)
+        assert_equal(actual_value, expected_value, field)
+
+
+def assert_model_match(actual: BaseModel, expected: BaseModel):
+    """
+    Сравнивает две Pydantic модели по каждому полю, допускает пустые значения
+    :param actual: Фактическая Pydantic модель
+    :param expected: Ожидаемая Pydantic модель
+    :raises AssertionError: Если фактическое значение какого либо из полей не равно ожидаемому.
+    """
+    expected_data = expected.model_dump(exclude_none=True)
+
+    for field, value in expected_data.items():
+        actual_value = getattr(actual, field)
+        expected_value = getattr(expected, field)
+        assert_equal(actual_value, expected_value, field)

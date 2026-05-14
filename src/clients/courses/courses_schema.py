@@ -74,3 +74,9 @@ class UpdateCourseResponseSchema(BaseModel):
     Описание структуры ответа обновления курса.
     """
     course: PartialCourseSchema
+
+class GetCoursesResponseSchema(BaseModel):
+    """
+    Описание структуры ответа на получение списка курсов.
+    """
+    courses: list[CourseSchema]

@@ -1,10 +1,11 @@
-from pyexpat.errors import messages
-
 from clients.errors_schema import ValidationErrorResponseSchema, ValidationErrorSchema, InternalErrorResponseSchema
 from clients.files.files_schema import CreateFileRequestSchema, CreateFileResponseSchema, FileSchema, GetFileResponseSchema
-from tools.assertions.base import assert_equal
+from tools.assertions.base import assert_equal, assert_model
 from tools.assertions.errors import assert_validation_error_response, assert_internal_error_response
 import httpx
+
+from tools.assertions.expected_errors import empty_filename_error, empty_directory_error, incorrect_file_id_error
+
 
 def assert_create_file_response(request: CreateFileRequestSchema,response: CreateFileResponseSchema):
     """
@@ -16,6 +17,7 @@ def assert_create_file_response(request: CreateFileRequestSchema,response: Creat
     expected_url = f"http://localhost:8000/static/{request.directory}/{request.filename}"
 
     assert_equal(str(response.file.url), expected_url, "url")
+
     assert_equal(response.file.filename, request.filename, "filename")
     assert_equal(response.file.directory, request.directory, "directory")
 
@@ -37,10 +39,7 @@ def assert_file(actual: FileSchema, expected: FileSchema):
     :param expected: Ожидаемые данные файла
     :raises AssertionError: Если хотя бы одно поле не совпадает
     """
-    assert_equal(actual.id, expected.id, "id")
-    assert_equal(actual.filename, expected.filename, "filename")
-    assert_equal(actual.directory, expected.directory, "directory")
-    assert_equal(actual.url, expected.url, "url")
+    assert_model(actual, expected)
 
 def assert_get_file_response(get_file_response: GetFileResponseSchema, create_file_response: CreateFileResponseSchema):
     """
@@ -59,16 +58,7 @@ def assert_create_file_with_empty_filename_response(actual: ValidationErrorRespo
     :param actual: Ответ от API с ошибкой валидации, который необходимо проверить.
     :raises AssertionError: Если фактический ответ не соответствует ожидаемому.
     """
-    expected = ValidationErrorResponseSchema(
-        details=[
-            ValidationErrorSchema(
-                type="missing",
-                input=None,
-                message="Field required",
-                location=["body", "filename"]
-            )
-        ]
-    )
+    expected = empty_filename_error()
     assert_validation_error_response(actual, expected)
 
 def assert_create_file_with_empty_directory_response(actual: ValidationErrorResponseSchema):
@@ -78,16 +68,7 @@ def assert_create_file_with_empty_directory_response(actual: ValidationErrorResp
     :param actual: Ответ от API с ошибкой валидации, который необходимо проверить.
     :raises AssertionError: Если фактический ответ не соответствует ожидаемому.
     """
-    expected = ValidationErrorResponseSchema(
-        details=[
-            ValidationErrorSchema(
-                type="missing",
-                input=None,
-                message="Field required",
-                location=["body", "directory"]
-            )
-        ]
-    )
+    expected = empty_directory_error()
     assert_validation_error_response(actual, expected)
 
 def assert_file_not_found_response(actual: InternalErrorResponseSchema):
@@ -106,15 +87,5 @@ def assert_get_file_with_incorrect_file_id_response(actual: ValidationErrorRespo
     :param actual: Ответ от API с ошибкой валидации, который необходимо проверить
     :raises AssertionError: Если фактический ответ не соответствует ожидаемому.
     """
-    expected = ValidationErrorResponseSchema(
-        details = [
-            ValidationErrorSchema(
-                type = "uuid_parsing",
-                location=["path", "file_id"],
-                message = "Input should be a valid UUID, invalid character: expected an optional prefix of `urn:uuid:` followed by [0-9a-fA-F-], found `i` at 1",
-                input = "incorrect-file-id",
-                context = {"error": "invalid character: expected an optional prefix of `urn:uuid:` followed by [0-9a-fA-F-], found `i` at 1"}
-            )
-        ]
-    )
+    expected = incorrect_file_id_error()
     assert_validation_error_response(expected, actual)

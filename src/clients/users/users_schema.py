@@ -29,7 +29,7 @@ class CreateUserRequestSchema(BaseModel):
 
 class CreateUserResponseSchema(BaseModel):
     """
-    Описание структкры ответа создания пользователя
+    Описание структуры ответа создания пользователя
     """
     user: UserSchema
 
@@ -55,3 +55,12 @@ class GetUserResponseSchema(BaseModel):
     Описание структуры запроса получения пользователя.
     """
     user: UserSchema
+
+class PartialUserSchema(BaseModel):
+    model_config = ConfigDict(populate_by_name=True)
+
+    email: EmailStr = Field(default_factory=fake.email)
+    last_name : str =Field(alias="lastName", default_factory=fake.last_name)
+    first_name : str =Field(alias="firstName", default_factory=fake.first_name)
+    middle_name : str =Field(alias="middleName", default_factory=fake.middle_name)
+

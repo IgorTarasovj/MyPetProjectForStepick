@@ -4,7 +4,8 @@ import pytest
 
 from clients.users.private_users_client import PrivateUsersClient
 from clients.users.public_users_client import PublicUsersClient
-from clients.users.users_schema import CreateUserRequestSchema, CreateUserResponseSchema, GetUserResponseSchema
+from clients.users.users_schema import CreateUserRequestSchema, CreateUserResponseSchema, GetUserResponseSchema, \
+    PartialUserSchema
 from fixtures.models.user_fixture import UserFixture
 from tools.assertions.schema import  validate_json_schema
 from tools.assertions.base import assert_status_code
@@ -27,8 +28,18 @@ class TestUsers:
         response = public_users_client.create_user_api(request)
         response_data = CreateUserResponseSchema.model_validate_json(response.text)
 
+        request_partial = PartialUserSchema(email=request.email,
+                                              firstName=request.first_name,
+                                              lastName=request.last_name,
+                                              middleName=request.middle_name)
+
+        response_partial = PartialUserSchema(email=response_data.user.email,
+                                               firstName=response_data.user.first_name,
+                                               lastName=response_data.user.last_name,
+                                               middleName=response_data.user.middle_name)
+
         assert_status_code(response.status_code, HTTPStatus.OK)
-        assert_create_user_response(request, response_data)
+        assert_create_user_response(request_partial, response_partial)
 
         validate_json_schema(response.json(), response_data.model_json_schema())
 
