@@ -60,18 +60,25 @@ def assert_length(actual: Sized, expected: Sized, name: str):
         f'Actual length: {len(actual)}'
     )
 
-def assert_model(actual: BaseModel, expected: BaseModel):
+def assert_model(
+        actual: BaseModel,
+        expected: BaseModel,
+        exclude: set[str] | None = None
+):
     """
-    Сравнивает две Pydantic модели по каждому полю
-    :param actual: Фактическая Pydantic модель
-    :param expected: Ожидаемая Pydantic модель
-    :raises AssertionError: Если фактическое значение какого либо из полей не равно ожидаемому.
-    """
-    expected_data = expected.model_dump()
+    Сравнивает две Pydantic модели по каждому полю.
 
-    for field, value in expected_data.items():
+    :param actual: Фактическая Pydantic модель.
+    :param expected: Ожидаемая Pydantic модель.
+    :param exclude: Поля, которые необходимо исключить из сравнения.
+    :raises AssertionError: Если значения полей не совпадают.
+    """
+    exclude = exclude or set()
+
+    expected_data = expected.model_dump(exclude=exclude)
+
+    for field, expected_value in expected_data.items():
         actual_value = getattr(actual, field)
-        expected_value = getattr(expected, field)
         assert_equal(actual_value, expected_value, field)
 
 

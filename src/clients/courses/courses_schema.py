@@ -17,7 +17,7 @@ class CourseSchema(BaseModel):
     description: str
     preview_file: FileSchema = Field(alias="previewFile")
     estimated_time: str = Field(alias="estimatedTime")
-    created_by_user: UserSchema = Field("createdByUser")
+    created_by_user: UserSchema = Field(alias="createdByUser")
 
 class PartialCourseSchema(BaseModel):
     model_config = ConfigDict(populate_by_name=True)
@@ -31,11 +31,11 @@ class PartialCourseSchema(BaseModel):
     estimated_time: str | None = Field(default=None, alias="estimatedTime")
     created_by_user: UserSchema | None = Field(default=None, alias="createdByUser")
 
-class GetCourseQuerySchema(BaseModel):
+class GetCoursesQuerySchema(BaseModel):
     """
     Описание структуры запроса на получение списка курсов.
     """
-    userId: str
+    user_id: str = Field(alias="userId")
 
 class CreateCourseResponseSchema(BaseModel):
     """
