@@ -1,5 +1,5 @@
 from clients.courses.courses_schema import UpdateCourseRequestSchema, UpdateCourseResponseSchema, CourseSchema, \
-    PartialCourseSchema, GetCoursesResponseSchema, CreateCourseResponseSchema
+    PartialCourseSchema, GetCoursesResponseSchema, CreateCourseResponseSchema, CreateCourseRequestSchema
 from tools.assertions.base import assert_equal, assert_model, assert_model_match, assert_length
 from tools.assertions.files import assert_file
 from tools.assertions.users import assert_user
@@ -51,3 +51,19 @@ def assert_get_courses_response(
 
     for index, create_course_response in enumerate(create_course_responses):
         assert_course(get_courses_response.courses[index], create_course_response.course)
+
+
+def assert_create_course_response(request: PartialCourseSchema, response: PartialCourseSchema):
+    """
+    Проверяет, что ответ на создание курса соответствует данным из запроса на создание
+
+    :param request: Post запрос на создание курса
+    :param response: Post ответ на создание курса
+    :raises AssertionError: Если данные не совпадают.
+    """
+    assert_model(request,
+                 response,
+                 exclude={"preview_file", "created_by_user"})
+
+    assert_file(request.preview_file, response.preview_file)
+    assert_user(request.created_by_user, response.created_by_user)
