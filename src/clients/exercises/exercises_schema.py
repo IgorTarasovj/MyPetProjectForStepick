@@ -61,3 +61,18 @@ class UpdateExerciseRequestSchema(BaseModel):
     order_index: int | None = Field(alias="orderIndex", default_factory=fake.integer)
     description: str | None = Field(alias="description", default_factory=fake.text)
     estimated_time: str | None = Field(alias="estimatedTime", default_factory=fake.estimated_time)
+
+class PartialExerciseShema(BaseModel):
+    """
+    Описание структуры задания с необязательным заполнением полей
+    """
+    model_config = ConfigDict(populate_by_name=True)
+
+    id: str | None = Field(default=str(uuid.uuid4()))
+    title: str | None = None
+    course_id: str | None = Field(alias="courseId", default=str(uuid.uuid4()))
+    max_score: int | None = Field(alias="maxScore")
+    min_score: int | None = Field(alias="minScore")
+    order_index: int | None = Field(alias="orderIndex")
+    description: str | None = None
+    estimated_time: str | None = Field(alias="estimatedTime")

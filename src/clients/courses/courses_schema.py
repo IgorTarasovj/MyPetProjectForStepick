@@ -20,6 +20,9 @@ class CourseSchema(BaseModel):
     created_by_user: UserSchema = Field(alias="createdByUser")
 
 class PartialCourseSchema(BaseModel):
+    """
+    Описание структуры курса с необязательными параметрами
+    """
     model_config = ConfigDict(populate_by_name=True)
 
     id: str | None = None
