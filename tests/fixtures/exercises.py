@@ -18,14 +18,14 @@ def exercise_client(function_user: UserFixture)-> ExercisesClient:
 
 @pytest.fixture(scope="function")
 def function_exercise(exercise_client: ExercisesClient,
-                      course_fixture: CourseFixture,
+                      function_course: CourseFixture,
                       ) -> ExerciseFixture:
     """
     Фикстура создает задание через API и возвращает данные запроса и ответа
     :param exercise_client: Клиент для работы с API заданий(/api/v1/exercises)
-    :param course_fixture: Фикстура добавления курса через API
+    :param function_course: Фикстура добавления курса через API
     :return: ExerciseFixture с данными запроса и ответа
     """
-    request = CreateExerciseRequestSchema(courseId=course_fixture.response.course.id)
+    request = CreateExerciseRequestSchema(courseId=function_course.response.course.id)
     response = exercise_client.create_exercise(request)
     return ExerciseFixture(request=request, response=response)

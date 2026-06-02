@@ -25,7 +25,9 @@ class GetExerciseSchema(BaseModel):
     """
     Описание структуры запроса на получение списка заданий
     """
-    courseId: str
+    model_config = ConfigDict(populate_by_name=True)
+
+    course_id: str = Field(alias="courseId")
 
 class CreateExerciseResponseSchema(BaseModel):
 
@@ -76,3 +78,9 @@ class PartialExerciseShema(BaseModel):
     order_index: int | None = Field(alias="orderIndex")
     description: str | None = None
     estimated_time: str | None = Field(alias="estimatedTime")
+
+class GetExerciseResponseSchema(BaseModel):
+    """
+    Описание структуры ответа на получение списка заданий.
+    """
+    exercise: ExerciseSchema
