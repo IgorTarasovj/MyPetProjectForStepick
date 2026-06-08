@@ -90,3 +90,9 @@ class UpdateExerciseResponseSchema(BaseModel):
     Описание структуры ответа на обновление задания
     """
     exercise: ExerciseSchema
+
+class GetExercisesResponseSchema(BaseModel):
+    """
+    Описание структуры ответа на получение списка заданий.
+    """
+    exercises: list[ExerciseSchema]
