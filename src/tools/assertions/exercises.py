@@ -1,6 +1,9 @@
+from clients.errors_schema import InternalErrorResponseSchema
 from clients.exercises.exercises_schema import PartialExerciseShema, ExerciseSchema, GetExerciseResponseSchema, \
     CreateExerciseResponseSchema
 from tools.assertions.base import assert_model, assert_length
+from tools.assertions.expected_errors import empty_exercise_error
+from tools.assertions.errors import assert_validation_error_response, assert_internal_error_response
 
 
 def assert_create_exercise_response(request: PartialExerciseShema, response: PartialExerciseShema):
@@ -56,3 +59,13 @@ def assert_update_exercise_response(request: PartialExerciseShema, response: Par
     :raises AssertionError: Если хотя бы одно поле не совпадает.
     """
     assert_model(request, response)
+
+def assert_exercise_not_found_response(actual: InternalErrorResponseSchema):
+    """
+    Проверяет, что ответ на получения несуществующего задания соответствует ожидаемой ошибке.
+
+    :param actual: Ответ от API с 404 ошибкой, который необходимо проверить.
+    :raises AssertionError: Если фактический ответ не соответствует ожидаемому.
+    """
+    expected = empty_exercise_error()
+    assert_internal_error_response(actual, expected)
