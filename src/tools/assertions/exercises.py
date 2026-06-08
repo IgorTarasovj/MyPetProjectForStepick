@@ -46,3 +46,13 @@ def assert_get_exercises_response(get_exercises_response: GetExerciseResponseSch
 
     for index, create_exercise_response in enumerate(create_exercise_response):
         assert_exercise(get_exercises_response.exercises[index], create_exercise_response.exercise)
+
+def assert_update_exercise_response(request: PartialExerciseShema, response: PartialExerciseShema):
+    """
+    Проверяет, что ответ на обновление задания соответствует данным из запроса.
+
+    :param request: Исходный запрос на обновление задания.
+    :param response: Ответ API с обновленными данными задания.
+    :raises AssertionError: Если хотя бы одно поле не совпадает.
+    """
+    assert_model(request, response)
