@@ -1,12 +1,14 @@
 from clients.courses.courses_schema import UpdateCourseRequestSchema, UpdateCourseResponseSchema, CourseSchema, \
     PartialCourseSchema, GetCoursesResponseSchema, CreateCourseResponseSchema, CreateCourseRequestSchema
-from tools.assertions.base import assert_equal, assert_model, assert_model_match, assert_length
+from clients.files.files_schema import FileSchema
+from clients.users.users_schema import UserSchema
+from tools.assertions.base import assert_equal, assert_model, assert_model_match, assert_length, assert_diff_model
 from tools.assertions.files import assert_file
 from tools.assertions.users import assert_user
 
 
 def assert_update_course_response(
-        request: PartialCourseSchema, response: PartialCourseSchema
+        request: UpdateCourseRequestSchema, response: CourseSchema
 ):
     """
     Проверяет, что ответ на обновление курса соответствует данным из запроса.
@@ -15,7 +17,7 @@ def assert_update_course_response(
     :param response: Ответ API с обновленными данными курса.
     :raises AssertionError: Если хотя бы одно поле не совпадает.
     """
-    assert_model_match(request, response)
+    assert_diff_model(request, response)
 
 
 def assert_course(actual: CourseSchema, expected: CourseSchema):
@@ -53,17 +55,22 @@ def assert_get_courses_response(
         assert_course(get_courses_response.courses[index], create_course_response.course)
 
 
-def assert_create_course_response(request: PartialCourseSchema, response: PartialCourseSchema):
+def assert_create_course_response(request: CreateCourseRequestSchema,
+                                  user_request: UserSchema,
+                                  file_request: FileSchema,
+                                  response: CourseSchema):
     """
     Проверяет, что ответ на создание курса соответствует данным из запроса на создание
 
     :param request: Post запрос на создание курса
+    :param user_request: UserSchema соответствующая createdByUserId в запросе
+    :param file_request: FileSchema соответствующая previewFileId в запросе
     :param response: Post ответ на создание курса
     :raises AssertionError: Если данные не совпадают.
     """
-    assert_model(request,
+    assert_diff_model(request,
                  response,
                  exclude={"preview_file", "created_by_user"})
 
-    assert_file(request.preview_file, response.preview_file)
-    assert_user(request.created_by_user, response.created_by_user)
+    assert_file(file_request, response.preview_file)
+    assert_user(user_request, response.created_by_user)

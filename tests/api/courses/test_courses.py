@@ -37,25 +37,9 @@ class TestCourses:
         response = courses_client.update_course_api(function_course.response.course.id, request)
         response_date = UpdateCourseResponseSchema.model_validate_json(response.text)
 
-        request_partial = PartialCourseSchema(
-            title = request.title,
-            maxScore=request.max_score,
-            minScore=request.min_score,
-            description=request.description,
-            estimatedTime=request.estimated_time
-        )
-
-        response_partial = PartialCourseSchema(
-            title = response_date.course.title,
-            maxScore=response_date.course.max_score,
-            minScore=response_date.course.min_score,
-            description=response_date.course.description,
-            estimatedTime=response_date.course.estimated_time
-
-        )
 
         assert_status_code(response.status_code, HTTPStatus.OK)
-        assert_update_course_response(request_partial, response_partial)
+        assert_update_course_response(request, response_date.course)
 
         validate_json_schema(response.json(), response_date.model_json_schema())
 
@@ -94,28 +78,10 @@ class TestCourses:
         response = courses_client.create_course_api(request)
         response_data = CreateCourseResponseSchema.model_validate_json(response.text)
 
-        request_partial = PartialCourseSchema(
-            title=request.title,
-            maxScore=request.max_score,
-            minScore=request.min_score,
-            description=request.description,
-            estimatedTime=request.estimated_time,
-            previewFile=function_file.response.file,
-            createdByUser=function_user.response.user
-            )
-
-        response_partial = PartialCourseSchema(
-            title=response_data.course.title,
-            maxScore=response_data.course.max_score,
-            minScore=response_data.course.min_score,
-            description=response_data.course.description,
-            estimatedTime=response_data.course.estimated_time,
-            previewFile=response_data.course.preview_file,
-            createdByUser=response_data.course.created_by_user
-
-        )
-
         assert_status_code(response.status_code, HTTPStatus.OK)
-        assert_create_course_response(request_partial, response_partial)
+        assert_create_course_response(request,
+                                      function_user.response.user,
+                                      function_file.response.file,
+                                      response_data.course)
 
         validate_json_schema(response.json(), response_data.model_json_schema())

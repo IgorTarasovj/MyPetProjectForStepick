@@ -91,7 +91,31 @@ def assert_model_match(actual: BaseModel, expected: BaseModel):
     """
     expected_data = expected.model_dump(exclude_none=True)
 
-    for field, value in expected_data.items():
+    for field, expected_value in expected_data.items():
         actual_value = getattr(actual, field)
-        expected_value = getattr(expected, field)
         assert_equal(actual_value, expected_value, field)
+
+
+def assert_diff_model(actual: BaseModel,
+                      expected: BaseModel,
+                      exclude: set[str] = None):
+    """
+    Сравнивает только общие поля для двух Pydantic моделей
+    :param actual: Фактическая Pydantic модель
+    :param expected: Ожидаемая Pydantic модель
+    :param exclude: Поля, которые необходимо исключить из сравнения.
+    :raises AssertionError: Если фактическое значение какого либо из полей не равно ожидаемому.
+    """
+    exclude = exclude or set()
+
+    actual_fields = set(actual.model_fields)
+    expected_fields = set(expected.model_fields)
+
+    common_fields = (actual_fields & expected_fields) - exclude
+
+    for field in common_fields:
+        assert_equal(
+            getattr(actual, field),
+            getattr(expected, field),
+            field
+        )

@@ -93,26 +93,8 @@ class TestExercises:
         response = exercise_client.update_exercise_api(function_exercise.response.exercise.id, request)
         response_data = UpdateExerciseResponseSchema.model_validate_json(response.text)
 
-        partial_request = PartialExerciseShema(
-            title=request.title,
-            description=request.description,
-            maxScore=request.max_score,
-            minScore=request.min_score,
-            orderIndex=request.order_index,
-            estimatedTime=request.estimated_time
-        )
-
-        partial_response = PartialExerciseShema(
-            title=response_data.exercise.title,
-            description=response_data.exercise.description,
-            maxScore=response_data.exercise.max_score,
-            minScore=response_data.exercise.min_score,
-            orderIndex=response_data.exercise.order_index,
-            estimatedTime=response_data.exercise.estimated_time
-        )
-
         assert_status_code(response.status_code, HTTPStatus.OK)
-        assert_update_exercise_response(partial_request, partial_response)
+        assert_update_exercise_response(request, response_data.exercise)
 
         validate_json_schema(response.json(), response_data.model_json_schema())
 

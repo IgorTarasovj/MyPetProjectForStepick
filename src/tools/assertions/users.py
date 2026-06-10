@@ -1,15 +1,15 @@
 from clients.users.users_schema import CreateUserRequestSchema, CreateUserResponseSchema, UserSchema, PartialUserSchema
-from tools.assertions.base import assert_equal, assert_model, assert_model_match
+from tools.assertions.base import assert_equal, assert_model, assert_model_match, assert_diff_model
 
 
-def assert_create_user_response(request: PartialUserSchema, response: PartialUserSchema):
+def assert_create_user_response(request: CreateUserRequestSchema, response: UserSchema):
     """
 
     :param request: Исходный запрос на создание пользователя.
     :param response: Ответ API с данными пользователя.
     :raises AssertionError: Если хотя бы одно поле не совпадает.
     """
-    assert_model(request, response)
+    assert_diff_model(request, response)
 
 def assert_user(actual : UserSchema, expected : UserSchema):
     """

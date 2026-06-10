@@ -1,7 +1,7 @@
 from clients.errors_schema import InternalErrorResponseSchema
 from clients.exercises.exercises_schema import PartialExerciseShema, ExerciseSchema, GetExerciseResponseSchema, \
-    CreateExerciseResponseSchema
-from tools.assertions.base import assert_model, assert_length
+    CreateExerciseResponseSchema, UpdateExerciseRequestSchema
+from tools.assertions.base import assert_model, assert_length, assert_diff_model
 from tools.assertions.expected_errors import empty_exercise_error
 from tools.assertions.errors import assert_validation_error_response, assert_internal_error_response
 
@@ -50,7 +50,7 @@ def assert_get_exercises_response(get_exercises_response: GetExerciseResponseSch
     for index, create_exercise_response in enumerate(create_exercise_response):
         assert_exercise(get_exercises_response.exercises[index], create_exercise_response.exercise)
 
-def assert_update_exercise_response(request: PartialExerciseShema, response: PartialExerciseShema):
+def assert_update_exercise_response(request: UpdateExerciseRequestSchema, response: ExerciseSchema):
     """
     Проверяет, что ответ на обновление задания соответствует данным из запроса.
 
@@ -58,7 +58,7 @@ def assert_update_exercise_response(request: PartialExerciseShema, response: Par
     :param response: Ответ API с обновленными данными задания.
     :raises AssertionError: Если хотя бы одно поле не совпадает.
     """
-    assert_model(request, response)
+    assert_diff_model(request, response)
 
 def assert_exercise_not_found_response(actual: InternalErrorResponseSchema):
     """

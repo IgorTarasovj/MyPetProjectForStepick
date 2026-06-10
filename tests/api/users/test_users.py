@@ -41,18 +41,8 @@ class TestUsers:
         response = public_users_client.create_user_api(request)
         response_data = CreateUserResponseSchema.model_validate_json(response.text)
 
-        request_partial = PartialUserSchema(email=request.email,
-                                              firstName=request.first_name,
-                                              lastName=request.last_name,
-                                              middleName=request.middle_name)
-
-        response_partial = PartialUserSchema(email=response_data.user.email,
-                                               firstName=response_data.user.first_name,
-                                               lastName=response_data.user.last_name,
-                                               middleName=response_data.user.middle_name)
-
         assert_status_code(response.status_code, HTTPStatus.OK)
-        assert_create_user_response(request_partial, response_partial)
+        assert_create_user_response(request, response_data.user)
 
         validate_json_schema(response.json(), response_data.model_json_schema())
 
