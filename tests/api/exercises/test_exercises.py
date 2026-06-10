@@ -26,11 +26,14 @@ from tools.assertions.schema import validate_json_schema
 @allure.tag(AllureTag.EXERCISES, AllureTag.REGRESSION)
 @allure.epic(AllureEpic.LMS)
 @allure.feature(AllureFeature.EXERCISES)
+@allure.parent_suite(AllureEpic.LMS)
+@allure.suite(AllureFeature.EXERCISES)
 class TestExercises:
     @allure.title("Create exercise")
     @allure.tag(AllureTag.CREATE_ENTITY)
     @allure.story(AllureStory.CREATE_ENTITY)
     @allure.severity(Severity.BLOCKER)
+    @allure.sub_suite(AllureStory.CREATE_ENTITY)
     def test_create_exercise(self, exercise_client: ExercisesClient,
                              function_course: CourseFixture):
 
@@ -40,30 +43,8 @@ class TestExercises:
         response = exercise_client.create_exercise_api(request)
         response_data = CreateExerciseResponseSchema.model_validate_json(response.text)
 
-        partial_request = PartialExerciseShema(
-            title=request.title,
-            description=request.description,
-            courseId=request.course_id,
-            maxScore=request.max_score,
-            minScore=request.min_score,
-            orderIndex=request.order_index,
-            estimatedTime=request.estimated_time
-        )
-
-
-        partial_response = PartialExerciseShema(
-            title=response_data.exercise.title,
-            description=response_data.exercise.description,
-            courseId=response_data.exercise.course_id,
-            maxScore=response_data.exercise.max_score,
-            minScore=response_data.exercise.min_score,
-            orderIndex=response_data.exercise.order_index,
-            estimatedTime=response_data.exercise.estimated_time
-
-        )
-
         assert_status_code(response.status_code, HTTPStatus.OK)
-        assert_create_exercise_response(partial_request, partial_response)
+        assert_create_exercise_response(request, response_data.exercise)
 
         validate_json_schema(response.json(), response_data.model_json_schema())
 
@@ -71,6 +52,7 @@ class TestExercises:
     @allure.tag(AllureTag.GET_ENTITY)
     @allure.story(AllureStory.GET_ENTITY)
     @allure.severity(Severity.BLOCKER)
+    @allure.sub_suite(AllureStory.GET_ENTITY)
     def test_get_exercise(self, exercise_client: ExercisesClient,
                           function_exercise: ExerciseFixture):
 
@@ -86,6 +68,7 @@ class TestExercises:
     @allure.title("Update exercise")
     @allure.story(AllureStory.UPDATE_ENTITY)
     @allure.severity(Severity.CRITICAL)
+    @allure.sub_suite(AllureStory.UPDATE_ENTITY)
     def test_update_exercise(self, exercise_client: ExercisesClient,
                              function_exercise: ExerciseFixture):
         request = UpdateExerciseRequestSchema()
@@ -102,6 +85,7 @@ class TestExercises:
     @allure.title("Delete exercise")
     @allure.story(AllureStory.DELETE_ENTITY)
     @allure.severity(Severity.CRITICAL)
+    @allure.sub_suite(AllureStory.DELETE_ENTITY)
     def test_delete_exercise(self, exercise_client: ExercisesClient,
                              function_exercise: ExerciseFixture):
 
@@ -120,6 +104,7 @@ class TestExercises:
     @allure.title("Get exercises")
     @allure.story(AllureStory.GET_ENTITIES)
     @allure.severity(Severity.BLOCKER)
+    @allure.sub_suite(AllureStory.GET_ENTITIES)
     def test_get_exercises(self, exercise_client: ExercisesClient, function_exercise: ExerciseFixture):
 
         query = GetExerciseSchema(courseId=function_exercise.response.exercise.course_id)

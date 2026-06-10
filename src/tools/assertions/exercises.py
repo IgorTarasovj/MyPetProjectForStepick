@@ -1,12 +1,12 @@
 from clients.errors_schema import InternalErrorResponseSchema
 from clients.exercises.exercises_schema import PartialExerciseShema, ExerciseSchema, GetExerciseResponseSchema, \
-    CreateExerciseResponseSchema, UpdateExerciseRequestSchema
+    CreateExerciseResponseSchema, UpdateExerciseRequestSchema, CreateExerciseRequestSchema
 from tools.assertions.base import assert_model, assert_length, assert_diff_model
 from tools.assertions.expected_errors import empty_exercise_error
 from tools.assertions.errors import assert_validation_error_response, assert_internal_error_response
 
 
-def assert_create_exercise_response(request: PartialExerciseShema, response: PartialExerciseShema):
+def assert_create_exercise_response(request: CreateExerciseRequestSchema, response: ExerciseSchema):
     """
     Проверяет, что ответ на создание курса соответствует данным из запроса.
 
@@ -14,7 +14,7 @@ def assert_create_exercise_response(request: PartialExerciseShema, response: Par
     :param response: Post ответ на создание задания
     :raises: AssertionError: Если данные не совпали
     """
-    assert_model(request, response)
+    assert_diff_model(request, response)
 
 def assert_exercise(actual: ExerciseSchema, expected: ExerciseSchema):
     """
