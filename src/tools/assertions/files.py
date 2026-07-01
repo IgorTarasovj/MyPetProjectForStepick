@@ -5,6 +5,7 @@ from clients.files.files_schema import CreateFileRequestSchema, CreateFileRespon
 from tools.assertions.base import assert_equal, assert_model
 from tools.assertions.errors import assert_validation_error_response, assert_internal_error_response
 import httpx
+from config import settings
 
 from tools.assertions.expected_errors import empty_filename_error, empty_directory_error, incorrect_file_id_error
 
@@ -16,7 +17,7 @@ def assert_create_file_response(request: CreateFileRequestSchema,response: Creat
     :param response: API ответ с данными файла
     :raises AssertionError: Если хотя бы одно поле не совпадает
     """
-    expected_url = f"http://localhost:8000/static/{request.directory}/{request.filename}"
+    expected_url = f"{settings.http_client.client_url}static/{request.directory}/{request.filename}"
 
     assert_equal(str(response.file.url), expected_url, "url")
 
