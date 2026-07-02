@@ -7,6 +7,9 @@ from clients.users.users_schema import UserSchema
 from tools.assertions.base import assert_equal, assert_model, assert_model_match, assert_length, assert_diff_model
 from tools.assertions.files import assert_file
 from tools.assertions.users import assert_user
+from tools.logger import get_logger
+
+logger = get_logger("COURSES_ASSERTIONS")
 
 @allure.step("Check update course response")
 def assert_update_course_response(
@@ -19,6 +22,7 @@ def assert_update_course_response(
     :param response: Ответ API с обновленными данными курса.
     :raises AssertionError: Если хотя бы одно поле не совпадает.
     """
+    logger.info("Check update course response")
     assert_diff_model(request, response)
 
 @allure.step("Check course")
@@ -30,6 +34,7 @@ def assert_course(actual: CourseSchema, expected: CourseSchema):
     :param expected: Ожидаемые данные курса.
     :raises AssertionError: Если хотя бы одно поле не совпадает.
     """
+    logger.info("Check course")
     assert_model(
         actual,
         expected,
@@ -51,6 +56,7 @@ def assert_get_courses_response(
     :param create_course_responses: Список API ответов при создании курсов.
     :raises AssertionError: Если данные курсов не совпадают.
     """
+    logger.info("Check get courses response")
     assert_length(get_courses_response.courses, create_course_responses, "courses")
 
     for index, create_course_response in enumerate(create_course_responses):
@@ -70,6 +76,7 @@ def assert_create_course_response(request: CreateCourseRequestSchema,
     :param response: Post ответ на создание курса
     :raises AssertionError: Если данные не совпадают.
     """
+    logger.info("Check create course response")
     assert_diff_model(request,
                  response,
                  exclude={"preview_file", "created_by_user"})
