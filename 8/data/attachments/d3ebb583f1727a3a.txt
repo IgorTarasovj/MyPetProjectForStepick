@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA3LTA4VDE4OjEzOjU1Ljc2MzI5NSIsInVzZXJfaWQiOiI1YTI2MzgzMy0wMWM2LTRkYjYtOTQyNC02NTA5ZTI2OGU2NTYifQ.mzd9EAMVi2cnWCuOEf4C673FJFRPh6tPthDLYuLh06w' \
+  -H 'content-length: 327' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Less trade within open argue.","maxScore":90,"minScore":16,"description":"Receive down street important station between image.\nReveal by establish old car. Even gas stand work.","estimatedTime":"3 weeks","previewFileId":"04d1fdab-3283-425b-b37c-2a0a69c50d6c","createdByUserId":"5a263833-01c6-4db6-9424-6509e268e656"}'

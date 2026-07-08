@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA3LTA4VDE4OjEzOjU4LjcwMDIzNSIsInVzZXJfaWQiOiIxNGMyYTIxMi1lMDcyLTRlMTYtYjRhMS04YTAzMzU1YjFjMzAifQ.FAqusyQ2OWUsfJoAU_fnl_zGDYJvX8tjAHSKLkyXMCk' \
+  -H 'content-length: 338' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Author employee also event he measure yet.","maxScore":73,"minScore":15,"description":"Floor value expert well level strategy whose. Century require those specific. Go market dark no stay.","estimatedTime":"4 weeks","previewFileId":"7140fbe1-b3d7-44e6-9345-2467107153ea","createdByUserId":"14c2a212-e072-4e16-b4a1-8a03355b1c30"}'

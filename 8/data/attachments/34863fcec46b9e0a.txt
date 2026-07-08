@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA3LTA4VDE4OjEzOjU2Ljc1MTMzMiIsInVzZXJfaWQiOiI1MGFlYzg4YS02NzFkLTQxYWMtYjFjNS0zZTZhNjdmYjdlNDAifQ.s3rB8ooiMANdw6IHNdBsWDns1djxqApDiLDnjt6RAlQ' \
+  -H 'content-length: 368' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Collection key other dinner already trade.","maxScore":57,"minScore":1,"description":"When media enjoy affect list audience. Mission add such edge while people. End serious father. Minute candidate leader for main nor.","estimatedTime":"6 weeks","previewFileId":"b3e7edf5-deee-4a45-93fd-ce22ee79093c","createdByUserId":"50aec88a-671d-41ac-b1c5-3e6a67fb7e40"}'

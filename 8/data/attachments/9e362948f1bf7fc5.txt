@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA3LTA4VDE4OjE0OjAxLjA4OTc3NiIsInVzZXJfaWQiOiI1MDdjMTQ2OC0yYWMxLTQwOGMtYTVhYS0wMmYxOGFlYWIyOGYifQ.RU-Jzx7vK887XoJY12_xonuuwv8HlGA91dga4wKKk3U' \
+  -H 'content-length: 402' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Enough staff strategy just.","maxScore":66,"minScore":9,"description":"Avoid learn lead mean. Require assume pull newspaper player. Buy already standard consider.\nActually determine enter much act five. Huge she reality write.\nStatement thought yeah.","estimatedTime":"9 weeks","previewFileId":"86d2e474-477f-4756-b04f-fdb7a2c7eab6","createdByUserId":"507c1468-2ac1-408c-a5aa-02f18aeab28f"}'

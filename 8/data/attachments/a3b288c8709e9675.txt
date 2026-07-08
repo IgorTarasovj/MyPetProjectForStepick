@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA3LTA4VDE4OjEzOjU4LjM5MjMwNyIsInVzZXJfaWQiOiI2ZTk5NjRjNi03OWNmLTRlZWMtODIxZS02MDA5NmY2YmY1NWMifQ.1SvhAGH_8ngkknLBBc7LEP3OVnSaq1PSnwUnDdw150Y' \
+  -H 'content-length: 423' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Check choose school individual culture police.","maxScore":77,"minScore":14,"description":"Early cut wide health try middle.\nSafe just goal morning.\nOpportunity pattern spend majority house might. Pretty the answer same plan more. Amount despite into general movie catch.","estimatedTime":"1 weeks","previewFileId":"260b04b3-cc2b-4448-b957-8de666abe7d3","createdByUserId":"6e9964c6-79cf-4eec-821e-60096f6bf55c"}'

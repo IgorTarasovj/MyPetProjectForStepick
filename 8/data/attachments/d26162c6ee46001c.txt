@@ -1,0 +1,11 @@
+curl -X 'PATCH' \
+  'http://localhost:8000/api/v1/exercises/d53a6d44-2db0-4021-a2a8-623e11d09059' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA3LTA4VDE4OjEzOjU4LjcwMDIzNSIsInVzZXJfaWQiOiIxNGMyYTIxMi1lMDcyLTRlMTYtYjRhMS04YTAzMzU1YjFjMzAifQ.FAqusyQ2OWUsfJoAU_fnl_zGDYJvX8tjAHSKLkyXMCk' \
+  -H 'content-length: 263' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Account become size listen already.","maxScore":56,"minScore":29,"orderIndex":48,"description":"Discussion affect maybe church nor when. Pressure sometimes prevent like cultural. Condition agency hard star range better begin.","estimatedTime":"8 weeks"}'

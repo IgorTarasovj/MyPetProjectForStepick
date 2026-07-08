@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA3LTA4VDE4OjE0OjAwLjAyNzQzNiIsInVzZXJfaWQiOiI3ZjE2OWFlOS03Mjk1LTRjNTItOTBjMi0zZTE1Yzg4MjljY2YifQ.QFYH95TTFDFa1HTPQdfsQRvntnoPJ7raYbsmo6fi0FM' \
+  -H 'content-length: 350' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Feeling specific peace clear edge.","maxScore":99,"minScore":15,"description":"Situation my area forward fall. Sit pass station end nation sure firm consider. Answer treat my toward make wait history.","estimatedTime":"5 weeks","previewFileId":"9fdf2716-3b12-4e7a-a93b-662839ccf465","createdByUserId":"7f169ae9-7295-4c52-90c2-3e15c8829ccf"}'
