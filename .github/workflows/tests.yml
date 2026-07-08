@@ -46,6 +46,14 @@ jobs:
       - name: Run API tests with pytest and generate Allure results
         run: |
           pytest -m regression --alluredir=allure-results --numprocesses 2  
+
+      - name: Upload Allure results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results
+          path: allure-results
+
           
 
   publish-report:
@@ -55,6 +63,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Download Allure results
+        uses: actions/download-artifact@v4
+        with:
+          name: allure-results
+          path: allure-results
+
       - name: Get Allure history
         if: always()
         continue-on-error: true
