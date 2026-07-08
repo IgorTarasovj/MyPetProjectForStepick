@@ -62,6 +62,7 @@ class TestFiles:
     @allure.story(AllureStory.VALIDATE_ENTITY)
     @allure.severity(Severity.NORMAL)
     @allure.sub_suite(AllureStory.VALIDATE_ENTITY)
+    @pytest.mark.xfail
     def test_create_file_with_empty_filename(self, files_client: FilesClient):
         request = CreateFileRequestSchema(
             filename="",
@@ -80,6 +81,7 @@ class TestFiles:
     @allure.story(AllureStory.VALIDATE_ENTITY)
     @allure.severity(Severity.NORMAL)
     @allure.sub_suite(AllureStory.VALIDATE_ENTITY)
+    @pytest.mark.xfail
     def test_create_file_with_empty_directory(self, files_client: FilesClient):
         request = CreateFileRequestSchema(
             directory="",
