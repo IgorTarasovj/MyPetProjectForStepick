@@ -48,15 +48,16 @@ jobs:
           pytest -m regression --alluredir=allure-results --numprocesses 2  
 
       - name: Get Allure history
-        uses: actions/checkout@v4
         if: always()
         continue-on-error: true
+        uses: actions/checkout@v4
         with:
+          fetch-depth: 0
           ref: gh-pages
           path: gh-pages
 
       - name: Generates Allure Report with history
-        uses: simple-elf/allure-report-action@v1.12
+        uses: simple-elf/allure-report-action@v1.14
         if: always()
         with:
           gh_pages: gh-pages
