@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA3LTA4VDE3OjQ1OjAwLjMwNzk0OSIsInVzZXJfaWQiOiJmNzQ3MzJhZC02NTYyLTQ5Y2YtOTczZC01NGZiMmU3NGJjNmEifQ.ne0CG1i-QpSGGTyqLgiezFKOPbZDaIEEyBLYU8QDEfk' \
+  -H 'content-length: 400' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Range arrive evening find data eye those expert.","maxScore":50,"minScore":13,"description":"No response meet probably. Decade radio continue though pull wind. Fall idea century record collection.\nStart before different plan quickly ten range along.","estimatedTime":"8 weeks","previewFileId":"a93f34b6-63c0-40aa-91f5-fa8d883e07ca","createdByUserId":"f74732ad-6562-49cf-973d-54fb2e74bc6a"}'

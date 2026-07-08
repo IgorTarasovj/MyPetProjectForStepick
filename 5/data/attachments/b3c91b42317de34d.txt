@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA3LTA4VDE3OjQ0OjU5LjAxMDQ5MiIsInVzZXJfaWQiOiJlMzZjNjI1OC00NGYyLTQ3ODItOWIyZS0xZjU1ODY1YWZiYjcifQ.1V3lGT_RT7aOqG_eZLnxbSiQlIGEvggnW5F8bk2Xwus' \
+  -H 'content-length: 352' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Worry likely have.","maxScore":98,"minScore":21,"description":"Stay especially others cell there mention. Magazine child sense bill production certainly practice. Out after identify moment reason staff.","estimatedTime":"1 weeks","previewFileId":"441895c1-0410-41cf-850d-e47ce9877631","createdByUserId":"e36c6258-44f2-4782-9b2e-1f55865afbb7"}'

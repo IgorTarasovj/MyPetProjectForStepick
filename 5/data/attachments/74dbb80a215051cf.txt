@@ -1,0 +1,11 @@
+curl -X 'PATCH' \
+  'http://localhost:8000/api/v1/courses/da046e7d-5684-483c-b1d4-0f0a21fdcdcf' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA3LTA4VDE3OjQ0OjU4LjM1NzQ1MSIsInVzZXJfaWQiOiIyMDU1NzJjZi04YTMyLTQ5YjUtOTU4Yy0wMjVkNTU1ODQ0ZWMifQ.CPodBmYlnb4gdvfp5J8Csa1dfOTXQOVn0GTkA9zHDoY' \
+  -H 'content-length: 275' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Threat chair stock understand fall son resource.","maxScore":73,"minScore":2,"description":"Road with resource shake for. Environmental view another.\nPolice himself yourself tough six record benefit. Pattern study factor big as mission.","estimatedTime":"5 weeks"}'

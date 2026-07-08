@@ -1,0 +1,11 @@
+curl -X 'PATCH' \
+  'http://localhost:8000/api/v1/exercises/914e017d-57f8-4030-ac81-b299462c1e91' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA3LTA4VDE3OjQ1OjAwLjMwNzk0OSIsInVzZXJfaWQiOiJmNzQ3MzJhZC02NTYyLTQ5Y2YtOTczZC01NGZiMmU3NGJjNmEifQ.ne0CG1i-QpSGGTyqLgiezFKOPbZDaIEEyBLYU8QDEfk' \
+  -H 'content-length: 304' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Simple difficult reflect.","maxScore":78,"minScore":13,"orderIndex":38,"description":"Least ground forget son mission.\nBetween agent choose try. Understand reason about friend news best.\nCommunity game American become business discuss at. Tax child month gas feel.","estimatedTime":"6 weeks"}'

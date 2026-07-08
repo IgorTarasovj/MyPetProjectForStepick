@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA3LTA4VDE3OjQ0OjU3LjM2MzU0MyIsInVzZXJfaWQiOiJjN2Y2NzY2Yi00MjIzLTQ3Y2MtODVhYy0xYjQyY2NiNDMwMDgifQ.e6cx0jaYJ2D-xUWVPr7-bjBtX5K7VZ1aVlXazNkTSvE' \
+  -H 'content-length: 395' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Responsibility us simply old.","maxScore":98,"minScore":11,"description":"Certain suggest cold body. Visit include take able street discover.\nDeal sound many guess service. Because important commercial. Direction billion now tonight from plant.","estimatedTime":"1 weeks","previewFileId":"79567d76-60f4-4bda-b87c-df89a3dbe12f","createdByUserId":"c7f6766b-4223-47cc-85ac-1b42ccb43008"}'

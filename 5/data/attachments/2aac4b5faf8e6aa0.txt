@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA3LTA4VDE3OjQ1OjAyLjY3NzUxMyIsInVzZXJfaWQiOiI0ZjJiNGYyNi0xZTdmLTRkNDgtOTJiOC05YWQ0MDNhY2NjMTMifQ.4NLD_7utQoxSH7nJSYfJ5GrvisShiO4MY6PS65LG_sE' \
+  -H 'content-length: 431' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Production account eat toward sport smile.","maxScore":62,"minScore":17,"description":"Home sport enjoy question. Early listen certainly company doctor. Impact perform reduce issue likely my quality clearly. Free condition light dark part.\nSchool keep need even sell act probably.","estimatedTime":"1 weeks","previewFileId":"25161348-9944-423e-a5db-d76d1a21ddf4","createdByUserId":"4f2b4f26-1e7f-4d48-92b8-9ad403accc13"}'

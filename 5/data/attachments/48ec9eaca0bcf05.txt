@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA3LTA4VDE3OjQ1OjAxLjYyMzE1MiIsInVzZXJfaWQiOiJmNjA5MWE3Ni0zZTFjLTRlNzgtYjhjZS03YmQyMmFhYTc5MTYifQ.vn03LVPYsKORkAv5-03WTcnlN09LwNQBrxr9lykVa54' \
+  -H 'content-length: 394' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Not general attack strategy three.","maxScore":51,"minScore":2,"description":"Discover if nation. Pressure blood four behavior.\nTheory sign yourself still ever network. Pass street hard reach. Example development team single music place spend.","estimatedTime":"7 weeks","previewFileId":"81f2803c-8645-472d-ad19-d7ca0ce27727","createdByUserId":"f6091a76-3e1c-4e78-b8ce-7bd22aaa7916"}'

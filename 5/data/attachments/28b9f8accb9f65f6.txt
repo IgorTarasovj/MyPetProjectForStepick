@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA3LTA4VDE3OjQ1OjAxLjMxNTc1NCIsInVzZXJfaWQiOiI2ZmNjMDJhMy0wZDU2LTQ0MTYtOWJiMy01NzhhOTZiYjIzNzcifQ.8x3ypLJ9iDMSzg_VfostaeMhTb3--jUcl6B_vHl_Mjk' \
+  -H 'content-length: 322' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Executive people team clearly begin.","maxScore":97,"minScore":19,"description":"Serious business win partner make appear. Tell apply conference meeting marriage late free.","estimatedTime":"3 weeks","previewFileId":"e67b91d3-0e22-40ef-a780-6b21ba1b1d48","createdByUserId":"6fcc02a3-0d56-4416-9bb3-578a96bb2377"}'

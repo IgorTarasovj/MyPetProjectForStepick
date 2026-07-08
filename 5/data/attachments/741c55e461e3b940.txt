@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA3LTA4VDE3OjQ0OjU4LjM1NzQ1MSIsInVzZXJfaWQiOiIyMDU1NzJjZi04YTMyLTQ5YjUtOTU4Yy0wMjVkNTU1ODQ0ZWMifQ.CPodBmYlnb4gdvfp5J8Csa1dfOTXQOVn0GTkA9zHDoY' \
+  -H 'content-length: 354' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Among chance daughter third course worry.","maxScore":55,"minScore":23,"description":"Black line decade. Group save care much education owner. Technology fire above approach. Heart service physical break.","estimatedTime":"4 weeks","previewFileId":"d095c661-e11c-4fd6-bf3e-6ab53a5fe7ef","createdByUserId":"205572cf-8a32-49b5-958c-025d555844ec"}'
