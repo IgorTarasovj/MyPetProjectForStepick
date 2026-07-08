@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA3LTA4VDE3OjU0OjI0LjUzNjQ1OSIsInVzZXJfaWQiOiJlNDM5YmVhZi03NjNiLTQzOWEtODU0OS03ZTFkMGNiNGJkNzMifQ.tjXb8p-IcEZezppGsPuLtT_RW3FQjIRcBL9Oa29U6W0' \
+  -H 'content-length: 399' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Event ready reflect friend.","maxScore":98,"minScore":27,"description":"Notice continue marriage plant. Night word learn think young. Follow wonder personal home. Window many easy.\nQuestion move page later make eat. Tree catch know under tree seat.","estimatedTime":"9 weeks","previewFileId":"b98964de-1ac6-4cb0-a030-a29e7f74a225","createdByUserId":"e439beaf-763b-439a-8549-7e1d0cb4bd73"}'

@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA3LTA4VDE3OjU0OjIwLjgyODYxMyIsInVzZXJfaWQiOiJhNGVjZDMyMy05NDIxLTQ0NzMtOGU1Mi05M2I2NjkyZDc5MzgifQ.5aTGp91vQPg2PooKfm9Ca6LU6TlM1jyV3N2Aun0l0L8' \
+  -H 'content-length: 354' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Build peace nearly travel expect behind.","maxScore":92,"minScore":10,"description":"Enjoy relationship speech country and step traditional. Type century culture later throw. Laugh article one allow help.","estimatedTime":"2 weeks","previewFileId":"144154a8-0ccf-4b10-b2b8-256caafb57ca","createdByUserId":"a4ecd323-9421-4473-8e52-93b6692d7938"}'

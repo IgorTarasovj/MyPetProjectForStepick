@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA3LTA4VDE3OjU0OjIwLjUyMDYxMSIsInVzZXJfaWQiOiI2MDczMGQyYi0wZWEyLTQ1ZjEtOGM1ZS1kYThlYzE1OWExYWMifQ.PVXkY5YIJjVXBnlHa8L6o63d7M0r062NXnXBv5stA9s' \
+  -H 'content-length: 412' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Parent now century expect deal rich relationship.","maxScore":64,"minScore":3,"description":"Yeah hair pass.\nWell production allow wonder food table past. Heavy while which fish.\nStore sister language age ten. Be economy answer avoid collection while cultural.","estimatedTime":"6 weeks","previewFileId":"244f1892-bdbd-476d-b506-bc94c8f751d7","createdByUserId":"60730d2b-0ea2-45f1-8c5e-da8ec159a1ac"}'

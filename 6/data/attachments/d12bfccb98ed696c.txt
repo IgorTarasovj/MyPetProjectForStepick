@@ -1,0 +1,21 @@
+INFO     HTTP_CLIENT:event_hooks.py:25 Make POST request to http://localhost:8000/api/v1/users
+INFO     HTTP_CLIENT:event_hooks.py:33 Got response 200 OK from http://localhost:8000/api/v1/users
+INFO     HTTP_CLIENT:event_hooks.py:25 Make POST request to http://localhost:8000/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:33 Got response 200 OK from http://localhost:8000/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:25 Make POST request to http://localhost:8000/api/v1/files
+INFO     HTTP_CLIENT:event_hooks.py:33 Got response 200 OK from http://localhost:8000/api/v1/files
+INFO     HTTP_CLIENT:event_hooks.py:25 Make POST request to http://localhost:8000/api/v1/courses
+INFO     HTTP_CLIENT:event_hooks.py:33 Got response 200 OK from http://localhost:8000/api/v1/courses
+INFO     HTTP_CLIENT:event_hooks.py:25 Make POST request to http://localhost:8000/api/v1/exercises
+INFO     HTTP_CLIENT:event_hooks.py:33 Got response 200 OK from http://localhost:8000/api/v1/exercises
+INFO     BASE_ASSERTIONS:base.py:18 Check that response status code equals to 200
+INFO     ERRORS_EXERCISES:exercises.py:22 Check create exercise response
+INFO     BASE_ASSERTIONS:base.py:35 Check that "max_score" equals to 80
+INFO     BASE_ASSERTIONS:base.py:35 Check that "min_score" equals to 18
+INFO     BASE_ASSERTIONS:base.py:35 Check that "estimated_time" equals to 10 weeks
+INFO     BASE_ASSERTIONS:base.py:35 Check that "title" equals to Social gun son over skin create on.
+INFO     BASE_ASSERTIONS:base.py:35 Check that "description" equals to Discussion for machine technology at leader kid. Need able fact great.
+Position guess commercial daughter lose keep appear. Security PM much direction.
+INFO     BASE_ASSERTIONS:base.py:35 Check that "course_id" equals to 282ff6d4-72f9-4871-9025-4bed1e8f2b76
+INFO     BASE_ASSERTIONS:base.py:35 Check that "order_index" equals to 47
+INFO     SCHEMA_ASSERTIONS:schema.py:19 Validating JSON schema

@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA3LTA4VDE3OjU0OjIzLjE3NzY5NiIsInVzZXJfaWQiOiIyOWNkOWMyZi1iZWI3LTQ4ZjktYTc2ZC0yZTk4OTlmNGY3OTMifQ.UcxzkX_6jzTEPwexbW8lBrdpDLDc32l0d80cG09vPFA' \
+  -H 'content-length: 356' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Must know dog cost.","maxScore":82,"minScore":24,"description":"Rule wonder sense public compare.\nHow almost need east. Owner citizen financial effect bill way week. Our window seek begin fly station yard.","estimatedTime":"8 weeks","previewFileId":"6a42bbdd-eb20-4c7b-a6fa-8bcf761a4fc9","createdByUserId":"29cd9c2f-beb7-48f9-a76d-2e9899f4f793"}'

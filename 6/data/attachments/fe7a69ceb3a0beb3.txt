@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA3LTA4VDE3OjU0OjE5LjI0MDUxNCIsInVzZXJfaWQiOiJkOGJhYzQzNy04MGYwLTRmZjAtYWFkZS1iNzYzMDRkYWMwZDYifQ.8bczBcDMHqb210wqVYoycCjLolDyJGPKXqvChgr2bF0' \
+  -H 'content-length: 311' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Ago wear wear.","maxScore":88,"minScore":6,"description":"Serious former memory really risk recently herself. Ago attention pattern yard sort executive rest job.","estimatedTime":"3 weeks","previewFileId":"c60628be-161d-42d8-a6c8-c59be0a0a8dc","createdByUserId":"d8bac437-80f0-4ff0-aade-b76304dac0d6"}'

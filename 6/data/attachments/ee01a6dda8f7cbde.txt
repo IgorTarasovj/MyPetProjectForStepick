@@ -1,0 +1,19 @@
+INFO     HTTP_CLIENT:event_hooks.py:25 Make POST request to http://localhost:8000/api/v1/users
+INFO     HTTP_CLIENT:event_hooks.py:33 Got response 200 OK from http://localhost:8000/api/v1/users
+INFO     HTTP_CLIENT:event_hooks.py:25 Make POST request to http://localhost:8000/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:33 Got response 200 OK from http://localhost:8000/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:25 Make POST request to http://localhost:8000/api/v1/files
+INFO     HTTP_CLIENT:event_hooks.py:33 Got response 200 OK from http://localhost:8000/api/v1/files
+INFO     HTTP_CLIENT:event_hooks.py:25 Make POST request to http://localhost:8000/api/v1/courses
+INFO     HTTP_CLIENT:event_hooks.py:33 Got response 200 OK from http://localhost:8000/api/v1/courses
+INFO     HTTP_CLIENT:event_hooks.py:25 Make PATCH request to http://localhost:8000/api/v1/courses/d4eedc9c-d031-4de9-bea2-221e1ce23a83
+INFO     HTTP_CLIENT:event_hooks.py:33 Got response 200 OK from http://localhost:8000/api/v1/courses/d4eedc9c-d031-4de9-bea2-221e1ce23a83
+INFO     BASE_ASSERTIONS:base.py:18 Check that response status code equals to 200
+INFO     COURSES_ASSERTIONS:courses.py:25 Check update course response
+INFO     BASE_ASSERTIONS:base.py:35 Check that "max_score" equals to 92
+INFO     BASE_ASSERTIONS:base.py:35 Check that "estimated_time" equals to 5 weeks
+INFO     BASE_ASSERTIONS:base.py:35 Check that "title" equals to Law region top art.
+INFO     BASE_ASSERTIONS:base.py:35 Check that "description" equals to Wonder free such have development. Which investment room risk figure why. Full current ball people the war.
+East approach news together growth.
+INFO     BASE_ASSERTIONS:base.py:35 Check that "min_score" equals to 28
+INFO     SCHEMA_ASSERTIONS:schema.py:19 Validating JSON schema

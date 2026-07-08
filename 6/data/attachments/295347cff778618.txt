@@ -1,0 +1,22 @@
+INFO     HTTP_CLIENT:event_hooks.py:25 Make POST request to http://localhost:8000/api/v1/users
+INFO     HTTP_CLIENT:event_hooks.py:33 Got response 200 OK from http://localhost:8000/api/v1/users
+INFO     HTTP_CLIENT:event_hooks.py:25 Make POST request to http://localhost:8000/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:33 Got response 200 OK from http://localhost:8000/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:25 Make POST request to http://localhost:8000/api/v1/files
+INFO     HTTP_CLIENT:event_hooks.py:33 Got response 200 OK from http://localhost:8000/api/v1/files
+INFO     HTTP_CLIENT:event_hooks.py:25 Make POST request to http://localhost:8000/api/v1/courses
+INFO     HTTP_CLIENT:event_hooks.py:33 Got response 200 OK from http://localhost:8000/api/v1/courses
+INFO     HTTP_CLIENT:event_hooks.py:25 Make POST request to http://localhost:8000/api/v1/exercises
+INFO     HTTP_CLIENT:event_hooks.py:33 Got response 200 OK from http://localhost:8000/api/v1/exercises
+INFO     HTTP_CLIENT:event_hooks.py:25 Make PATCH request to http://localhost:8000/api/v1/exercises/46d0925e-497d-4462-9ff8-2c7407dde671
+INFO     HTTP_CLIENT:event_hooks.py:33 Got response 200 OK from http://localhost:8000/api/v1/exercises/46d0925e-497d-4462-9ff8-2c7407dde671
+INFO     BASE_ASSERTIONS:base.py:18 Check that response status code equals to 200
+INFO     ERRORS_EXERCISES:exercises.py:73 Check update exercise response
+INFO     BASE_ASSERTIONS:base.py:35 Check that "max_score" equals to 88
+INFO     BASE_ASSERTIONS:base.py:35 Check that "title" equals to Each trip chair miss.
+INFO     BASE_ASSERTIONS:base.py:35 Check that "description" equals to Subject question Mr suggest. Develop decade base actually her thank.
+Boy fall have make another great tree. Drive next must. Interview she actually however fill process.
+INFO     BASE_ASSERTIONS:base.py:35 Check that "min_score" equals to 30
+INFO     BASE_ASSERTIONS:base.py:35 Check that "estimated_time" equals to 3 weeks
+INFO     BASE_ASSERTIONS:base.py:35 Check that "order_index" equals to 90
+INFO     SCHEMA_ASSERTIONS:schema.py:19 Validating JSON schema

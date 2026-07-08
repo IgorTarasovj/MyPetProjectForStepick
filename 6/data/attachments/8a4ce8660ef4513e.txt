@@ -1,0 +1,11 @@
+curl -X 'PATCH' \
+  'http://localhost:8000/api/v1/courses/d4eedc9c-d031-4de9-bea2-221e1ce23a83' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA3LTA4VDE3OjU0OjIwLjUyMDYxMSIsInVzZXJfaWQiOiI2MDczMGQyYi0wZWEyLTQ1ZjEtOGM1ZS1kYThlYzE1OWExYWMifQ.PVXkY5YIJjVXBnlHa8L6o63d7M0r062NXnXBv5stA9s' \
+  -H 'content-length: 246' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Law region top art.","maxScore":92,"minScore":28,"description":"Wonder free such have development. Which investment room risk figure why. Full current ball people the war.\nEast approach news together growth.","estimatedTime":"5 weeks"}'
