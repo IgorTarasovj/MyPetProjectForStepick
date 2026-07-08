@@ -6,3 +6,5 @@ src/pages/__pycache__
 /__pycache__
 *.pyc
 test_main_page.cpython-314-pytest-9.0.2.pyc
+allure-results
+allure-report
