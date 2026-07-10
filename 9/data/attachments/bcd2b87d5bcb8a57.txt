@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA3LTEwVDE0OjUxOjU1Ljc4MDI5NSIsInVzZXJfaWQiOiJjOGY0MjE4Ni1kODdjLTQ0MTMtOTljZC1mN2Y2YWNlZTdkNjkifQ.xQ2eayaDQjHNdrGwSGM6YeOYKkr9Y4N2JKqqD2dMpCw' \
+  -H 'content-length: 372' \
+  -H 'content-type: application/json' \
+  -d '{"title":"White say factor they.","maxScore":75,"minScore":10,"description":"Production administration position could wide message. Degree realize town trial man laugh notice. Hundred especially fund visit consumer maintain herself.","estimatedTime":"6 weeks","previewFileId":"99cebf24-26c6-4713-a595-f65a6d9beddf","createdByUserId":"c8f42186-d87c-4413-99cd-f7f6acee7d69"}'

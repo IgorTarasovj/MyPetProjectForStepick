@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA3LTEwVDE0OjUxOjU4LjI3MTA3MyIsInVzZXJfaWQiOiJiYmJjNTg0OS03ZmExLTQ4NWEtOTUzZC0wMzM2ZmFkNTg1ZDEifQ.foJCHSAai3kRTVynjIP218jPtk61y20wSc0Y-BuaHlk' \
+  -H 'content-length: 370' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Process friend boy among.","maxScore":80,"minScore":14,"description":"Agency light team between per drive recently.\nLow right write investment. Population song west.\nListen trip I from. Born during cell point own unit.","estimatedTime":"3 weeks","previewFileId":"254b6751-2214-4878-8b32-d54a38f36a67","createdByUserId":"bbbc5849-7fa1-485a-953d-0336fad585d1"}'

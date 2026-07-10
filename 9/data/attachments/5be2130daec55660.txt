@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA3LTEwVDE0OjUxOjU2LjkzNzg1NyIsInVzZXJfaWQiOiJjOTIxNjEwMi0wOTAyLTRlMmItYTU0MS1iOTg2NzVkNTk0ODgifQ.LpMGrDrEgYQ0UbVoOBdXZsTqrjguz9VEpnMumlaZNh4' \
+  -H 'content-length: 398' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Minute book rock break attorney lay necessary.","maxScore":51,"minScore":13,"description":"Sport perform cause today how political pull some.\nSeries ball teacher when machine camera work. Walk similar wait tonight reason. Imagine home simply left.","estimatedTime":"3 weeks","previewFileId":"f511f3ec-ead5-40a0-8cf1-652618b3c044","createdByUserId":"c9216102-0902-4e2b-a541-b98675d59488"}'

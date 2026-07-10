@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA3LTEwVDE0OjUxOjU2LjY5MDE4OSIsInVzZXJfaWQiOiI1M2U4YTlhOS01YzU2LTRkNjAtYjBhZS00MmY0MTQ2ZGE3NWQifQ.d4s9qyNmYZSVHK_KTmfImLBsQoROaAeVlzEnRDHU4wo' \
+  -H 'content-length: 391' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Paper conference support think.","maxScore":95,"minScore":23,"description":"Here white receive. Boy how hard worry window body.\nActivity trial practice it cold kid around. Focus most three white off lot. Say pull executive purpose painting.","estimatedTime":"3 weeks","previewFileId":"004c74b0-10cf-49b8-baec-812a192d7159","createdByUserId":"53e8a9a9-5c56-4d60-b0ae-42f4146da75d"}'

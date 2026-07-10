@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA3LTEwVDE0OjUxOjU4LjAxNDkxMiIsInVzZXJfaWQiOiI3Mzk2ZjY4MC03NjQyLTQ5NWMtODU3Yi0zMDg5YWRjNmU5YmUifQ.x-y0rbbiJscTLIUMYMD6FPv6Tls1uX8cYUk4wjlXj24' \
+  -H 'content-length: 397' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Someone body garden here third station send.","maxScore":78,"minScore":18,"description":"Role mind film government look success me. Himself democratic exist.\nBad position country attack face air probably. Organization seven somebody rather stand.","estimatedTime":"6 weeks","previewFileId":"54037166-abce-4287-aca5-53151e90c0cd","createdByUserId":"7396f680-7642-495c-857b-3089adc6e9be"}'

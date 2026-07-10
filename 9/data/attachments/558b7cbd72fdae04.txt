@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA3LTEwVDE0OjUxOjU1LjI0MjA1OCIsInVzZXJfaWQiOiIzOTFhZjY2NS0xZWQwLTQ0ZjctOWE3ZC01NTk0NjI5MzNiZGYifQ.UtwGyI_Yc9sGPPTGRPp0zyYiqYZ2YaE4OaJG3ZBAYvM' \
+  -H 'content-length: 421' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Could able fight respond.","maxScore":62,"minScore":10,"description":"Avoid like such.\nMe hope difficult someone officer beautiful almost. Race for protect. Probably million along avoid difference real.\nCatch start third painting key their. Southern whom station eight.","estimatedTime":"7 weeks","previewFileId":"cbe6bfc2-f647-4a6b-a32c-1ca05013867a","createdByUserId":"391af665-1ed0-44f7-9a7d-559462933bdf"}'

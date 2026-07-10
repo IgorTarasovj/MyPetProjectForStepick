@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA3LTEwVDE0OjUxOjU5LjY3MDgwNyIsInVzZXJfaWQiOiI5MDA3YjY1Ny05ODJiLTQ2NWUtYTA3OS1lZWNmODQzNGE0NWYifQ.hJdYItgJ8w_GtRMuIftXaWaEJsqMnAZee_v6QqQ4diM' \
+  -H 'content-length: 409' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Executive then break year.","maxScore":81,"minScore":8,"description":"Hair floor imagine budget industry heart western occur. Analysis thousand with score operation notice pressure. Around keep record ready the. Word seat tonight without play traditional car.","estimatedTime":"3 weeks","previewFileId":"ecffb18c-adc8-4634-8bf2-5ebec15b1ba2","createdByUserId":"9007b657-982b-465e-a079-eecf8434a45f"}'

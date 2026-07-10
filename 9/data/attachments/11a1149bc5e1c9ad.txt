@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA3LTEwVDE0OjUxOjU0LjQxNzE2MyIsInVzZXJfaWQiOiIzMmFkZDU3My1kZTE1LTQ5MGQtYjQyMi00OTg3Mjk3NjEzMjQifQ.q3HbrkRf3ijkhyVjtulIChmAnHdWRqLKFpZyv7h5Qig' \
+  -H 'content-length: 362' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Remember avoid much.","maxScore":77,"minScore":3,"description":"Range focus movie certain. And push turn customer. Before light put court what step.\nSing process box learn responsibility. Tax alone season story.","estimatedTime":"5 weeks","previewFileId":"c947a970-d7d2-47fc-bc9a-a4d1d81f9e7f","createdByUserId":"32add573-de15-490d-b422-498729761324"}'
